@@ -4,6 +4,10 @@ module ApplicationHelper
   end
 
   def tab(name)
-    raw "<li><a href=\"/#{name}\">#{name.capitalize}</a></li>"
+    raw "<li#{' class="current"' if current_tab?(name) }><a href=\"/#{name}\">#{name.capitalize}</a></li>"
+  end
+
+  def current_tab?(name)
+    params[:controller] == name
   end
 end
