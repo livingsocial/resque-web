@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def tab(name)
-    raw "<li#{' class="current"' if current_tab?(name) }><a href=\"/#{name}\">#{name.capitalize}</a></li>"
+    content_tag :li, link_to(name.capitalize, "/#{name}"), :class => current_tab?(name) ? "current" : nil
   end
 
   def current_tab?(name)
