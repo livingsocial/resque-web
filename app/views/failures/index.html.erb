@@ -1,4 +1,4 @@
-<% if failure_multiple_queues? && !params[:queue] %>
+<% if multiple_failure_queues? && !params[:queue] %>
 <h1>All Failed Queues: <%= Resque::Failure.queues.size %> total</h1>
 <% else %>
 <h1>Failed Jobs <%= "on '#{params[:queue]}'" if params[:queue] %> <%= "with class '#{params[:class]}'" if params[:class] %></h1>
@@ -13,7 +13,7 @@
 </form>
 <% end %>
 
-<% if failure_multiple_queues? && !params[:queue] %>
+<% if multiple_failure_queues? && !params[:queue] %>
 <%= render :partial => 'overview' %>
 <% else %>
 <p class='sub'>Showing <%= failure_start_at %> to <%= failure_end_at %> of <b><%= failure_size %></b> jobs</p>

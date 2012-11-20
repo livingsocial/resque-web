@@ -3,9 +3,8 @@ module FailuresHelper
     "%Y/%m/%d %T %z"
   end
 
-  def failure_multiple_queues?
-    return @multiple_failure_queues if defined?(@multiple_failure_queues)
-    @multiple_failure_queues = Resque::Failure.queues.size > 1
+  def multiple_failure_queues?
+    @multiple_failure_queues ||= Resque::Failure.queues.size > 1
   end
 
   def failure_size
@@ -35,7 +34,7 @@ module FailuresHelper
       class_name ||= "nil"
       classes[class_name] += 1
     end
-    classes
+    classes.sort_by { |name,_| name }
   end
 
   def job_arguments(job)
