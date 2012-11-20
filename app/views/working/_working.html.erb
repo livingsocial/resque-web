@@ -1,6 +1,6 @@
-  <h1 class='wi'><%= worker_jobs.size %> of <%= workers.size %> Workers Working</h1>
-  <p class='intro'>The list below contains all workers which are currently running a job.</p>
-  <table class='workers'>
+  <h1 class="wi"><%= worker_jobs.size %> of <%= workers.size %> Workers Working</h1>
+  <p class="intro">The list below contains all workers which are currently running a job.</p>
+  <table class="workers">
     <tr>
       <th>&nbsp;</th>
       <th>Where</th>
@@ -9,24 +9,24 @@
     </tr>
     <% if worker_jobs.empty? %>
     <tr>
-      <td colspan="4" class='no-data'>Nothing is happening right now...</td>
+      <td colspan="4" class="no-data">Nothing is happening right now...</td>
     </tr>
     <% end %>
 
     <% sorted_worker_jobs.each do |worker, job| %>
       <tr>
-        <td class='icon'><img src="<%=u state = worker.state %>.png" alt="<%= state %>" title="<%= state %>"></td>
+        <td class="icon"><%= image_tag "#{worker.state}.png", :alt => worker.state, :title => worker.state %></td>
         <% host, pid, queues = worker.to_s.split(':') %>
-        <td class='where'><a href="<%=u "/workers/#{worker}" %>"><%= host %>:<%= pid %></a></td>
-        <td class='queues queue'>
-          <a class="queue-tag" href="<%=u "/queues/#{job['queue']}" %>"><%= job['queue'] %></a>
+        <td class="where"><%= link_to "#{host}:#{pid}", worker_path(host) %></td>
+        <td class="queues queue">
+          <%= link_to job['queue'], queue_path(job['queue']), :class => 'queue-tag' %>
         </td>
-        <td class='process'>
+        <td class="process">
           <% if job['queue'] %>
             <code><%= job['payload']['class'] %></code>
-            <small><a class="queue time" href="<%=u "/working/#{worker}" %>"><%= job['run_at'] %></a></small>
+            <small><%= job['run_at'] %></small>
           <% else %>
-            <span class='waiting'>Waiting for a job...</span>
+            <span class="waiting">Waiting for a job...</span>
           <% end %>
         </td>
       </tr>
