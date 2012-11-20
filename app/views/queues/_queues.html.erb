@@ -12,9 +12,9 @@
   </tr>
   <% end %>
 
-  <% failed_queue_names.each do |queue_name| %>
-  <tr class="<%= failed_queue_class(queue_name) %>">
-    <td class='queue failed'><%= link_to queue_name, "/failed/#{queue_name}", :class => 'queue' %></td>
+  <% failed_queue_names.each_with_index do |queue_name, i| %>
+  <tr class="<%= failed_queue_class(queue_name) %><%= " first_failure" if i.zero? %>">
+    <td class='queue failed'><%= link_to queue_name, failure_path(queue_name), :class => 'queue' %></td>
     <td class='size'><%= failed_queue_size(queue_name) %></td>
   </tr>
   <% end %>

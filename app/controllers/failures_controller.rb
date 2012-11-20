@@ -1,12 +1,20 @@
 class FailuresController < ApplicationController
-  include FailuresHelper
-
   def show
-    @jobs = []
+    if params[:class]
+      start_at, end_at = 0, Resque::Failure.count(params[:id])
+    else
+      start_at, end_at = view_context.failure_start_at, view_context.failure_end_at
+    end
 
-    # FIXME: a better API for obtaining failures would be nice here
-    Resque::Failure.each(failure_start_at, failure_per_page, params[:id], params[:class]) do |id, job|
-      @jobs << [id, job]
+    @jobs = Resque::Failure.all(start_at, end_at, params[:id]).map.with_index { |j, i| [i, j] }
+
+    if params[:class]
+      @jobs.delete_if do |_, job|
+        next false unless job['payload'] && job['payload']['class']
+        job['payload']['class'].downcase != params[:class].downcase
+      end
+
+      @jobs[view_context.failure_start_at..view_context.failure_end_at]
     end
   end
 end

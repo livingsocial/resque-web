@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/defunkt/resque.git
-  revision: da89aa9555dcb0b4a8cd694dd488d3ebe8663874
+  revision: 8eeb0756aded7fded5d261155a37ad8d17a396a2
   branch: 1-x-stable
   specs:
     resque (1.23.0)
