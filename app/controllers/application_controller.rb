@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     @subtabs = tab_names
   end
 
-  def set_subtabs
-    @subtabs = self.class.subtabs
+  def set_subtabs(subtabs = self.class.subtabs)
+    @subtabs = subtabs
   end
 end

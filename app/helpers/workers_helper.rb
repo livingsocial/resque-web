@@ -8,7 +8,11 @@ module WorkersHelper
         hosts[host] += [worker.to_s]
       end
 
-      hosts.sort_by { |h,w| h }
+      hosts
     end
+  end
+
+  def current_subtab?(name)
+    params[:id] == name.to_s
   end
 end

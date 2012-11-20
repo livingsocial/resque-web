@@ -1,6 +1,6 @@
 module WorkingHelper
   def workers
-    @workers ||= Resque.working
+    @workers ||= Resque.workers
   end
 
   def jobs
