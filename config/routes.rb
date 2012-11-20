@@ -6,5 +6,8 @@ ResqueWeb::Application.routes.draw do
   resources :failures
   resources :workers
 
+  get '/stats', :controller => :stats, :action => :index
+  get '/stats/:action', :controller => :stats
+
   root :to => 'overview#show'
 end
