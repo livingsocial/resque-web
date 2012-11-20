@@ -1,6 +1,6 @@
 module QueuesHelper
   def queue_names
-    Resque.queues.sort_by { |q| q.to_s }
+    Resque.queues.sort_by(&:to_s)
   end
 
   def queue_size(queue_name)
@@ -8,7 +8,7 @@ module QueuesHelper
   end
 
   def failed_queue_names
-    Resque::Failure.queues.sort_by { |q| q.to_s }
+    Resque::Failure.queues.sort_by(&:to_s)
   end
 
   def failed_queue_class(queue_name)
