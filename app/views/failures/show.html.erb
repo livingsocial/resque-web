@@ -1,0 +1,17 @@
+<h1>Failed Jobs <%= "on '#{params[:id]}'" if params[:id] %> <%= "with class '#{params[:class]}'" if params[:class] %></h1>
+
+<% unless @jobs.empty? %>
+<form method="POST" action="<%= u "failed#{'/' + params[:id] if params[:id]}/clear" %>">
+  <input type="submit" name="" value="Clear <%= params[:id] ? "'#{params[:id]}'" : 'Failed' %> Jobs" />
+</form>
+<form method="POST" action="<%= u "failed#{'/' + params[:id] if params[:id]}/requeue/all" %>">
+  <input type="submit" name="" value="Retry <%= params[:id] ? "'#{params[:id]}'" : 'Failed' %> Jobs" />
+</form>
+<% end %>
+
+<p class='sub'>Showing <%= failure_start_at %> to <%= failure_end_at %> of <b><%= failure_size %></b> jobs</p>
+<ul class='failed'>
+  <% @jobs.each do |id, job| %>
+    <%= render :partial => 'failed_job', :locals => {:id => id, :job => job} %>
+  <% end %>
+</ul>

@@ -7,16 +7,16 @@
 
   <% Resque::Failure.queues.sort.each do |queue| %>
     <tr>
-      <th><b class="queue-tag"><a href="/failed/<%= queue %>"><%= queue %></a></b></th>
+      <th><%= link_to queue, failure_path(queue), :class => 'queue-tag' %></th>
       <th style="width:75px;" class="center"><%= Resque::Failure.count(queue) %></th>
     </tr>
 
-    <% failure_class_counts(queue).each do |k, v| %>
-    <tr id="<%= k %>">
+    <% failure_class_counts(queue).each do |klass, count| %>
+    <tr id="<%= klass %>">
       <td>
-        <a href="/failed/<%= "#{queue}?class=#{k}" %>"><span class="failed failed_class"><%= k %></span></a>
+        <%= link_to klass, failure_path(queue, :class => klass), :class => "failed failed_class" %>
       </td>
-      <td style="text-align: center;" class="failed<%= (v.to_i > 1000) ? '_many' : '' %>"><%= v %></td>
+      <td style="text-align: center;" class="failed<%= (count.to_i > 1000) ? '_many' : '' %>"><%= count %></td>
     </tr>
     <% end %>
   <% end %>

@@ -8,7 +8,7 @@ module FailuresHelper
   end
 
   def failure_size
-    @failure_size ||= Resque::Failure.count(params[:queue], params[:class])
+    @failure_size ||= Resque::Failure.count(params[:id], params[:class])
   end
 
   def failure_per_page
@@ -27,7 +27,7 @@ module FailuresHelper
     end
   end
 
-  def failure_class_counts(queue = params[:queue])
+  def failure_class_counts(queue = params[:id])
     classes = Hash.new(0)
     Resque::Failure.each(0, Resque::Failure.count(queue), queue) do |_, item|
       class_name = item['payload']['class'] if item['payload']

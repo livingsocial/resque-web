@@ -3,7 +3,7 @@ ResqueWeb::Application.routes.draw do
 
   resources :working
   resources :queues
-  resources :failures
+  resources :failures, :constraints => {:id => /[^\/]+/}
   resources :workers
 
   get '/stats', :controller => :stats, :action => :index
