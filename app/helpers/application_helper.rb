@@ -1,6 +1,6 @@
 module ApplicationHelper
   def tabs
-    %w(overview working failed queues workers stats)
+    %w(overview working failures queues workers stats)
   end
 
   def tab(name)

@@ -3,6 +3,7 @@ ResqueWeb::Application.routes.draw do
 
   resources :working
   resources :queues
+  resources :failures
 
   root :to => 'overview#show'
 end

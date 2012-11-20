@@ -1,0 +1,28 @@
+<% if failure_multiple_queues? && !params[:queue] %>
+<h1>All Failed Queues: <%= Resque::Failure.queues.size %> total</h1>
+<% else %>
+<h1>Failed Jobs <%= "on '#{params[:queue]}'" if params[:queue] %> <%= "with class '#{params[:class]}'" if params[:class] %></h1>
+<% end %>
+
+<% unless failure_size.zero? %>
+<form method="POST" action="<%= u "failed#{'/' + params[:queue] if params[:queue]}/clear" %>">
+  <input type="submit" name="" value="Clear <%= params[:queue] ? "'#{params[:queue]}'" : 'Failed' %> Jobs" />
+</form>
+<form method="POST" action="<%= u "failed#{'/' + params[:queue] if params[:queue]}/requeue/all" %>">
+  <input type="submit" name="" value="Retry <%= params[:queue] ? "'#{params[:queue]}'" : 'Failed' %> Jobs" />
+</form>
+<% end %>
+
+<% if failure_multiple_queues? && !params[:queue] %>
+<%= render :partial => 'overview' %>
+<% else %>
+<p class='sub'>Showing <%= failure_start_at %> to <%= failure_end_at %> of <b><%= failure_size %></b> jobs</p>
+
+<ul class='failed'>
+  <% Resque::Failure.each(failure_start_at, failure_per_page, params[:queue], params[:class]) do |id, job| %>
+    <%= render :partial => 'failed_job', :locals => {:id => id, :job => job} %>
+  <% end %>
+</ul>
+
+<%#= partial :next_more, :start => failure_start_at, :size => failure_size unless params[:class] %>
+<% end %>
