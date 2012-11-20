@@ -21,10 +21,10 @@
     <% end %>
   </div>
 
-  <% if @subtabs %>
+  <% unless subtabs.empty? %>
     <ul class='subnav'>
-      <% for subtab in @subtabs %>
-        <li <%= class_if_current "#{current_section}/#{subtab}" %>><a href="<%= current_section %>/<%= subtab %>"><span><%= subtab %></span></a></li>
+      <% subtabs.each do |tab_name| %>
+        <%= subtab tab_name %>
       <% end %>
     </ul>
   <% end %>
