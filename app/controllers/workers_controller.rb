@@ -1,0 +1,2 @@
+class WorkersController < ApplicationController
+end
