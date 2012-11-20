@@ -37,4 +37,9 @@ module FailuresHelper
     end
     classes
   end
+
+  def job_arguments(job)
+    return 'nil' unless job['payload']
+    Array(job['payload']['args']).map { |arg| arg.inspect }.join("\n")
+  end
 end

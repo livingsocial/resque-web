@@ -35,7 +35,7 @@
       <% end %>
     </dd>
     <dt>Arguments</dt>
-    <dd><pre>[placeholder] <%#=h job['payload'] ? show_args(job['payload']['args']) : 'nil' %></pre></dd>
+    <dd><pre><%= job_arguments(job) %></pre></dd>
     <dt>Exception</dt>
     <dd><code><%= job['exception'] %></code></dd>
     <dt>Error</dt>
