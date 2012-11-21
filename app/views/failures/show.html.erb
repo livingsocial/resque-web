@@ -15,3 +15,5 @@
     <%= render :partial => 'failed_job', :locals => {:id => id, :job => job} %>
   <% end %>
 </ul>
+
+<%= pagination :start => failure_start_at, :total => failure_size unless params[:class] %>
