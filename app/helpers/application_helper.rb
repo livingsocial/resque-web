@@ -23,7 +23,7 @@ module ApplicationHelper
   end
 
   def current_subtab?(name)
-    params[:action] == name.to_s
+    params[:id] == name.to_s
   end
 
   def pagination(options = {})

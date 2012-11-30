@@ -2,7 +2,7 @@ ResqueWeb::Application.routes.draw do
   resource  :overview, :controller => 'overview'
 
   resources :working
-  resources :queues
+  resources :queues,   :constraints => {:id => /[^\/]+/}
   resources :failures, :constraints => {:id => /[^\/]+/}
   resources :workers,  :constraints => {:id => /[^\/]+/}
 

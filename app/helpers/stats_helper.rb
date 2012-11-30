@@ -21,4 +21,8 @@ module StatsHelper
       Resque.redis.zcard(key)
     end
   end
+
+  def current_subtab?(name)
+    params[:action] == name.to_s
+  end
 end

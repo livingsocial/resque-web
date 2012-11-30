@@ -11,8 +11,4 @@ module WorkersHelper
       hosts
     end
   end
-
-  def current_subtab?(name)
-    params[:id] == name.to_s
-  end
 end
