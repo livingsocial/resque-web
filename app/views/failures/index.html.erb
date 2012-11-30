@@ -5,12 +5,12 @@
 <% end %>
 
 <% unless failure_size.zero? %>
-<form method="POST" action="<%= u "failed#{'/' + params[:queue] if params[:queue]}/clear" %>">
-  <input type="submit" name="" value="Clear <%= params[:queue] ? "'#{params[:queue]}'" : 'Failed' %> Jobs" />
-</form>
-<form method="POST" action="<%= u "failed#{'/' + params[:queue] if params[:queue]}/requeue/all" %>">
-  <input type="submit" name="" value="Retry <%= params[:queue] ? "'#{params[:queue]}'" : 'Failed' %> Jobs" />
-</form>
+<%= form_tag("/failed/#{params[:queue] if params[:queue]}", :method => :delete) do %>
+  <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs" %>
+<% end %>
+<%= form_tag("/failed/#{params[:queue] ? params[:queue] : "all"}/requeue") do %>
+  <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs" %>
+<% end %>
 <% end %>
 
 <% if multiple_failure_queues? && !params[:queue] %>
