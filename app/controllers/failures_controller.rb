@@ -17,4 +17,9 @@ class FailuresController < ApplicationController
       @jobs[view_context.failure_start_at..view_context.failure_end_at]
     end
   end
+
+  def destroy
+    Resque::Failure.clear params[:id]
+    redirect_to failure_path
+  end
 end
