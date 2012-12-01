@@ -13,20 +13,20 @@
       <% if job['retried_at'] %>
         <div class='retried'>
           Retried <b><span class="time"><%= Time.parse(job['retried_at']).strftime(failure_date_format) %></span></b>
-          <a href="<%= u "failed/remove/#{id}" %>" class="remove" rel="remove">Remove</a>
+          <%= link_to "Remove", "/falures/#{params[:id]}/jobs/#{id}", :method => :delete, :class => 'remove', :rel => 'remove' %>
         </div>
       <% else %>
         <div class='controls'>
-          <a href="<%= u "failed/requeue/#{id}" %>" rel="retry">Retry</a>
+          <%= link_to "Retry", "/failures/#{params[:id]}/retry/#{id}" %>
           or
-          <a href="<%= u "failed/remove/#{id}" %>" rel="remove">Remove</a>
+          <%= link_to "Remove", "/failures/#{params[:id]}/jobs/#{id}", :method => :delete %>
         </div>
       <% end %>
     </dd>
     <dt>Class</dt>
     <dd>
       <% if job['payload'] && job['payload']['class'] %>
-        <a href="<%= u "failed/#{params[:queue]}?class=#{job['payload']['class']}" %>">
+        <a href="<%= "/failures/#{params[:id]}?class=#{job['payload']['class']}" %>">
           <code><%= job['payload']['class'] %></code>
         </a>
       <% else %>
