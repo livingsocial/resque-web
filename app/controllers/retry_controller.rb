@@ -1,0 +1,2 @@
+class RetryController < ApplicationController
+end

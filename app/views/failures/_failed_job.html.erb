@@ -13,11 +13,11 @@
       <% if job['retried_at'] %>
         <div class='retried'>
           Retried <b><span class="time"><%= Time.parse(job['retried_at']).strftime(failure_date_format) %></span></b>
-          <%= link_to "Remove", "/falures/#{params[:id]}/jobs/#{id}", :method => :delete, :class => 'remove', :rel => 'remove' %>
+          <%= link_to "Remove", "/failures/#{params[:id]}/jobs/#{id}", :method => :delete, :class => 'remove', :rel => 'remove' %>
         </div>
       <% else %>
         <div class='controls'>
-          <%= link_to "Retry", "/failures/#{params[:id]}/retry/#{id}" %>
+          <%= link_to "Retry", "/failures/#{params[:id]}/retry/#{id}", :method => :put %>
           or
           <%= link_to "Remove", "/failures/#{params[:id]}/jobs/#{id}", :method => :delete %>
         </div>

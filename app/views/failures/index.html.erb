@@ -5,10 +5,10 @@
 <% end %>
 
 <% unless failure_size.zero? %>
-<%= form_tag("/failed/#{params[:queue] if params[:queue]}", :method => :delete) do %>
+<%= form_tag("/failures/#{params[:queue] if params[:queue]}", :method => :delete) do %>
   <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs" %>
 <% end %>
-<%= form_tag("/failed/#{params[:queue] ? params[:queue] : "all"}/retry") do %>
+<%= form_tag("/failures/#{params[:queue] ? params[:queue] : "all"}/retry") do %>
   <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs" %>
 <% end %>
 <% end %>
@@ -19,7 +19,7 @@
 <p class='sub'>Showing <%= failure_start_at %> to <%= failure_end_at %> of <b><%= failure_size %></b> jobs</p>
 
 <ul class='failed'>
-  <% Resque::Failure.each(failure_start_at, failure_per_page, params[:queue], params[:class]) do |id, job| %>
+  <% each_failure do |id, job| %>
     <%= render :partial => 'failed_job', :locals => {:id => id, :job => job} %>
   <% end %>
 </ul>

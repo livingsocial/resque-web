@@ -1,12 +1,21 @@
+# Match IDs with dots in them
+id_pattern = /[^\/]+/
+
 ResqueWeb::Application.routes.draw do
   resource  :overview, :controller => 'overview'
 
   resources :working
-  resources :queues,   :constraints => {:id => /[^\/]+/}
-  resources :failures, :constraints => {:id => /[^\/]+/}
-  resources :workers,  :constraints => {:id => /[^\/]+/}
+  resources :queues,   :constraints => {:id => id_pattern}
+  resources :workers,  :constraints => {:id => id_pattern}
 
-  get '/stats', :controller => :stats, :action => :index
+  resources :failures, :constraints => {:failure_id => id_pattern, :id => id_pattern} do
+    resources :retry
+    resources :jobs
+  end
+
+  delete '/failures' => "failures#destroy"
+
+  get '/stats' => "stats#index"
   get '/stats/:action', :controller => :stats
 
   root :to => 'overview#show'
