@@ -39,7 +39,11 @@ body {
 
 .container h1 { color:#ce1212; font-size: 24px; }
 
-/* The following CSS rules come from the legacy Resque application */
+.label-info[href], .badge-info[href] {
+  background-color: #3A87AD;
+}
+
+/* The remaining CSS rules come from the legacy Resque application */
 .subnav { padding: 8px 5% 7px 5%; background:#ce1212; font-size:90%;}
 .subnav li { display:inline;}
 .subnav li a { color:#fff; text-decoration:none; margin-right:10px; display:inline-block; background:#dd5b5b; padding:5px; -webkit-border-radius:3px; -moz-border-radius:3px;}
@@ -52,7 +56,6 @@ body {
 .container table tr td, .container table tr th { border:1px solid #ccc; padding:6px;}
 .container table tr th { background:#efefef; color:#888; font-size:15px; font-weight:bold;}
 .container table tr td.no-data { text-align:center; padding:40px 0; color:#999; font-style:italic; font-size:130%;}
-.container a { color:#111;}
 .container p { margin:5px 0;}
 .container p.intro { margin-bottom:15px; font-size:85%; color:#999; margin-top:0; line-height:1.3;}
 .container h1.wi { margin-bottom:5px;}
@@ -71,8 +74,6 @@ body {
 .container table.workers td.icon img { height: 16px; width: 16px; }
 .container table.workers td.where { width:25%;}
 .container table.workers td.queues { width:35%;}
-.container .queue-tag { background:#b1d2e9; padding:2px; margin:0 3px; font-size:80%; text-decoration:none; text-transform:uppercase; font-weight:bold; color:#3274a2; -webkit-border-radius:4px; -moz-border-radius:4px;}
-.container .queue-tag a { color: #3274A2; text-decoration: none; }
 .container table.workers td.queues.queue { width:10%;}
 .container table.workers td.process { width:35%;}
 .container table.workers td.process span.waiting { color:#999; font-size:90%;}

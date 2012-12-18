@@ -1,13 +1,13 @@
-<table id="failed">
+<table class="table" id="failed">
 <tbody>
   <tr class="total">
-    <td class='queue'>Total Failed</td>
-    <td class='center'><%= Resque::Failure.count %></td>
+    <td class="queue">Total Failed</td>
+    <td class="center"><%= Resque::Failure.count %></td>
   </tr>
 
   <% Resque::Failure.queues.sort.each do |queue| %>
     <tr>
-      <th><%= link_to queue, failure_path(queue), :class => 'queue-tag' %></th>
+      <th><%= link_to queue, failure_path(queue), :class => 'label label-info' %></th>
       <th style="width:75px;" class="center"><%= Resque::Failure.count(queue) %></th>
     </tr>
 

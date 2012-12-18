@@ -15,7 +15,7 @@
       <td class="where"><%= host %>:<%= pid %></td>
       <td class="queues">
         <% queues.split(',').each do |queue_name| %>
-        <%= link_to queue_name, queue_path(queue_name), :class => 'queue-tag' %>
+        <%= link_to queue_name, queue_path(queue_name), :class => 'label label-info' %>
         <% end %>
       </td>
       <td class="process">
@@ -24,14 +24,14 @@
           <code><%= data['payload']['class'] %></code>
           <small><%= data['run_at'] %></small>
         <% else %>
-          <span class='waiting'>Waiting for a job...</span>
+          <span class="waiting">Waiting for a job...</span>
         <% end %>
       </td>
     </tr>
     <% end %>
     <% if @workers.empty? %>
     <tr>
-      <td colspan='4' class='no-data'>There are no registered workers</td>
+      <td colspan="4" class="no-data">There are no registered workers</td>
     </tr>
     <% end %>
   </table>
