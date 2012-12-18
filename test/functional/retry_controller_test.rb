@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class RetryControllerTest < ActionController::TestCase
-  test "should retry jobs" do
+  it "should retry jobs" do
     failure_id = 1
     post 'create', :failure_id => failure_id
     assert_redirected_to failure_path(1)
