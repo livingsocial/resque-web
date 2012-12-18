@@ -1,4 +1,12 @@
 module QueuesHelper
+  def queues_partial_name
+    if Resque::Failure.backend == Resque::Failure::RedisMultiQueue
+      'queues/queues_advanced'
+    else
+      'queues/queues_basic'
+    end
+  end
+
   def queue_names
     Resque.queues.sort_by(&:to_s)
   end
@@ -31,11 +39,30 @@ module QueuesHelper
     Resque::Failure.queues.sort_by(&:to_s)
   end
 
+  def failed_queue_name(original_queue_name)
+    "#{original_queue_name}_failed"
+  end
+
   def failed_queue_class(queue_name)
     Resque::Failure.count(queue_name).zero? ? "failed" : "failure"
   end
 
   def failed_queue_size(queue_name)
     Resque::Failure.count(queue_name)
+  end
+
+  def failed_queue_info(queue_name)
+    failed_queue = failed_queue_name(queue_name)
+    size = failed_queue_size(failed_queue)
+
+    if size > 0
+      css_class = "badge badge-important"
+      badge = link_to(size, failure_path(failed_queue))
+    else
+      css_class = "badge"
+      badge = size.to_s
+    end
+     
+    raw "<span class=\"#{css_class}\">#{badge}</span>"
   end
 end
