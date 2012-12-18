@@ -2,10 +2,10 @@
 
 <% unless @jobs.empty? %>
 <%= form_tag("/failures/#{params[:id] if params[:id]}", :method => :delete) do %>
-  <%= submit_tag "Clear #{params[:id] ? "'#{params[:id]}'" : 'Failed'} Jobs" %>
+  <%= submit_tag "Clear #{params[:id] ? "'#{params[:id]}'" : 'Failed'} Jobs", :class => 'btn' %>
 <% end %>
 <%= form_tag("/failures/#{params[:id] ? params[:id] : "all"}/retry") do %>
-  <%= submit_tag "Retry #{params[:id] ? "'#{params[:id]}'" : 'Failed'} Jobs" %>
+  <%= submit_tag "Retry #{params[:id] ? "'#{params[:id]}'" : 'Failed'} Jobs", :class => 'btn' %>
 <% end %>
 <% end %>
 
