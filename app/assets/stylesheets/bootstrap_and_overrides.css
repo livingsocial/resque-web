@@ -60,7 +60,7 @@ body {
 
 .container table.queues { width:40%;}
 .container table.queues td.queue { font-weight:bold; width:50%;}
-.container table.queues tr.failure td { background:#ffecec; font-size:90%; color:#d37474;}
+.container table.queues tr.failure td { background:#ffecec; color:#d37474;}
 .container table.queues tr.failure td a{ color:#d37474;}
 .container table.queues tr.first_failure td { border-top:2px solid #d37474; }
 
