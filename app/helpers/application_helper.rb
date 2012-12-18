@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def tab(name)
-    content_tag :li, link_to(name.capitalize, "/#{name}"), :class => current_tab?(name) ? "current" : nil
+    content_tag :li, link_to(name.capitalize, "/#{name}"), :class => current_tab?(name) ? "active" : nil
   end
 
   def current_tab
@@ -18,7 +18,6 @@ module ApplicationHelper
   attr_reader :subtabs
 
   def subtab(name)
-    puts "is #{name} current subtab? #{method(:current_subtab?)}"
     content_tag :li, link_to(name, "/#{current_tab}/#{name}"), :class => current_subtab?(name) ? "current" : nil
   end
 
