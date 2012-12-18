@@ -90,7 +90,7 @@ body {
 
 .container p.poll { background:url(poll.png) no-repeat 0 2px; padding:3px 0; padding-left:23px; float:right; font-size:85%; }
 
-.container ul.failed {}
+.container ul.failed {margin-top: 20px;}
 .container ul.failed li {background:-webkit-gradient(linear, left top, left bottom, from(#efefef), to(#fff)) #efefef; margin-top:10px; padding:10px; overflow:hidden; -webkit-border-radius:5px; border:1px solid #ccc; }
 .container ul.failed li dl dt {font-size:80%; color:#999; width:60px; float:left; padding-top:1px; text-align:right;}
 .container ul.failed li dl dd {margin-bottom:10px; margin-left:70px;}

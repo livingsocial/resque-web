@@ -9,8 +9,9 @@
 <% end %>
 <% end %>
 
-<p class='sub'>Showing <%= failure_start_at %> to <%= failure_end_at %> of <b><%= failure_size %></b> jobs</p>
-<ul class='failed'>
+<p class="sub">Showing <%= failure_start_at %> to <%= failure_end_at %> of <b><%= failure_size %></b> jobs</p>
+
+<ul class="failed">
   <% @jobs.each do |id, job| %>
     <%= render :partial => 'failed_job', :locals => {:id => id, :job => job} %>
   <% end %>
