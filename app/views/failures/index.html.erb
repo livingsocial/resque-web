@@ -6,7 +6,7 @@
 
 <% unless failure_size.zero? %>
 <%= form_tag("/failures/#{params[:queue] if params[:queue]}", :method => :delete) do %>
-  <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :class => 'btn' %>
+  <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :confirm => "Are you sure?", :class => 'btn btn-danger' %>
 <% end %>
 <%= form_tag("/failures/#{params[:queue] ? params[:queue] : "all"}/retry") do %>
   <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :class => 'btn' %>
