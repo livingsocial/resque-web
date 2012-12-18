@@ -16,8 +16,8 @@ group :assets do
   gem 'jquery-rails'
   gem 'twitter-bootstrap-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'libv8', '3.3.10.2'
+  gem 'therubyracer', '~> 0.10.0', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
