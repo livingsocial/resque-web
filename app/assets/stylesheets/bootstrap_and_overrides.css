@@ -44,7 +44,7 @@ body {
 }
 
 /* The remaining CSS rules come from the legacy Resque application */
-.subnav { padding: 8px 5% 7px 5%; background:#ce1212; font-size:90%;}
+.subnav { padding: 8px 10px 7px 10px; background:#ce1212; font-size:90%;}
 .subnav li { display:inline;}
 .subnav li a { color:#fff; text-decoration:none; margin-right:10px; display:inline-block; background:#dd5b5b; padding:5px; -webkit-border-radius:3px; -moz-border-radius:3px;}
 .subnav li.current a { background:#fff; font-weight:bold; color:#ce1212;}
