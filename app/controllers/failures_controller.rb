@@ -20,6 +20,6 @@ class FailuresController < ApplicationController
 
   def destroy
     Resque::Failure.clear params[:id]
-    redirect_to failure_path
+    redirect_to failures_path
   end
 end
