@@ -47,6 +47,11 @@ body {
   background-color: #3A87AD;
 }
 
+.logo {
+  float: left;
+  margin: 2px 5px;
+}
+
 /* The remaining CSS rules come from the legacy Resque application */
 .subnav { padding: 8px 10px 7px 10px; background:#ce1212; font-size:90%;}
 .subnav li { display:inline;}
