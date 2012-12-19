@@ -32,15 +32,17 @@
   </div>
 </div>
 
-<div class="container">
-  <% unless subtabs.empty? %>
-  <ul class="nav subnav">
+<% unless subtabs.empty? %>
+<ul class="nav subnav">
+  <div class="container">
     <% subtabs.each do |tab_name| %>
       <%= subtab tab_name %>
     <% end %>
-  </ul>
-  <% end %>
+  </div>
+</ul>
+<% end %>
 
+<div class="container">
   <%= yield %>
 </div>
 
