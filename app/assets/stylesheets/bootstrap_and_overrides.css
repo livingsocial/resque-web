@@ -50,6 +50,8 @@ body {
 .logo {
   float: left;
   margin: 2px 5px;
+  width: 36px;
+  height: 36px;
 }
 
 /* The remaining CSS rules come from the legacy Resque application */
