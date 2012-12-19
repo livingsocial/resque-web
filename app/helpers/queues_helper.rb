@@ -1,6 +1,6 @@
 module QueuesHelper
   def queues_partial_name
-    if Resque::Failure.backend == Resque::Failure::RedisMultiQueue
+    if defined?(Resque::Failure::RedisMultiQueue) && Resque::Failure.backend == Resque::Failure::RedisMultiQueue
       'queues/queues_advanced'
     else
       'queues/queues_basic'

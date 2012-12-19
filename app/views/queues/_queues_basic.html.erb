@@ -1,5 +1,3 @@
-<h1>Queues</h1>
-<p class="intro">The list below contains all the registered queues with the number of jobs currently in the queue. Select a queue from above to view all jobs currently pending on the queue.</p>
 <table class="table table-bordered queues">
   <tr>
     <th>Name</th>
@@ -12,7 +10,7 @@
   </tr>
   <% end %>
 
-  <tr class="<%= failed_queue_class(failed) %> first_failure">
+  <tr class="<%= failed_queue_class('failed') %> first_failure">
     <td class="queue failed"><%= link_to 'failed', failure_path('failed'), :class => 'queue' %></td>
     <td class="size"><%= failed_queue_size('failed') %></td>
   </tr>
