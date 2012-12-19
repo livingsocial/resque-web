@@ -11,7 +11,7 @@
   <% end %>
 
   <tr class="<%= failed_queue_class('failed') %> first_failure">
-    <td class="queue failed"><%= link_to 'failed', failure_path('failed'), :class => 'queue' %></td>
+    <td class="queue failed"><%= link_to 'failed', failures_path, :class => 'queue' %></td>
     <td class="size"><%= failed_queue_size('failed') %></td>
   </tr>
 </table>
