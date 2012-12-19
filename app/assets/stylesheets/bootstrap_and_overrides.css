@@ -61,7 +61,7 @@ body {
 
 .container span.hl { background:#efefef; padding:2px;}
 .container h2 { margin:10px 0; font-size:130%;}
-.container table tr th { background:#efefef; color:#888; font-size:15px; font-weight:bold;}
+.container table tr th { background:#efefef; color:#888; font-size:15px; font-weight:bold; min-width: 16px; }
 .container table tr td.no-data { text-align:center; padding:40px 0; color:#999; font-style:italic; font-size:130%;}
 .container p { margin:5px 0;}
 .container p.intro { margin-bottom:15px; font-size:85%; color:#999; margin-top:0; line-height:1.3;}
