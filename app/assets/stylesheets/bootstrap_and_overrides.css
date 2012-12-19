@@ -93,7 +93,24 @@ body {
 .container p.poll { background:url(poll.png) no-repeat 0 2px; padding:3px 0; padding-left:23px; float:right; font-size:85%; }
 
 .container ul.failed {margin-top: 20px;}
-.container ul.failed li {background:-webkit-gradient(linear, left top, left bottom, from(#efefef), to(#fff)) #efefef; margin-top:10px; padding:10px; overflow:hidden; -webkit-border-radius:5px; border:1px solid #ccc; }
+.container ul.failed li {
+  background: #efefef; /* Old browsers */
+  background: -moz-linear-gradient(top, #efefef 0%, #fff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #efefef 0%,#fff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #efefef 0%,#fff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #efefef 0%,#fff 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #efefef 0%,#fff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#fff',GradientType=0 ); /* IE6-8 */
+
+  margin-top:10px;
+  padding:10px;
+  overflow:hidden; 
+  border:1px solid #ccc;
+  -webkit-border-radius:5px; 
+  -moz-border-radius:5px;
+  border-radius:5px;
+}
 .container ul.failed li dl dt {font-size:80%; color:#999; width:60px; float:left; padding-top:1px; text-align:right;}
 .container ul.failed li dl dd {margin-bottom:10px; margin-left:70px;}
 .container ul.failed li dl dd .retried { float:right; text-align: right; }
