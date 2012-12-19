@@ -6,6 +6,10 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+html {
+  background: #efefef;
+}
+
 body {
   padding-top: 40px;
 }

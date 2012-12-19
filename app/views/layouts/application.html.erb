@@ -37,12 +37,14 @@
   <% end %>
 
   <%= yield %>
+</div>
 
-  <footer id="footer">
+<footer id="footer">
+  <div class="container">
     <p>Powered by <a href="http://github.com/defunkt/resque">Resque</a> v<%=Resque::Version%></p>
     <p>Connected to Redis namespace <%= Resque.redis.namespace %> on <%=Resque.redis_id%></p>
-  </footer>
-</div>
+  </div>
+</footer>
 
 </body>
 </html>
