@@ -4,4 +4,12 @@ class StatsController < ApplicationController
   def index
     redirect_to :action => 'resque'
   end
+
+  def keys
+    if params[:id]
+      render 'key'
+    else
+      render 'keys'
+    end
+  end
 end

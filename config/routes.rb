@@ -17,6 +17,7 @@ ResqueWeb::Application.routes.draw do
 
   get '/stats' => "stats#index"
   get '/stats/:action', :controller => :stats
+  get '/stats/:action/:id', :controller => :stats, :constraints => {:id => id_pattern}
 
   root :to => 'overview#show'
 end

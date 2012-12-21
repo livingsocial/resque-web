@@ -34,11 +34,11 @@ module ApplicationHelper
     markup = ""
 
     if start - per_page >= 0
-      markup << link_to(raw("&laquo; less"), params.merge(:start => start - per_page), :class => 'less')
+      markup << link_to(raw("&laquo; less"), params.merge(:start => start - per_page), :class => 'btn less')
     end
 
     if start + 20 <= total
-      markup << link_to(raw("&raquo; more"), params.merge(:start => start + per_page), :class => 'more')
+      markup << link_to(raw("more &raquo;"), params.merge(:start => start + per_page), :class => 'btn more')
     end
 
     content_tag :p, raw(markup), :class => 'pagination'
