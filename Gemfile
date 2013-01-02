@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.10'
 
 gem 'resque', :git => 'git://github.com/defunkt/resque.git', :branch => "1-x-stable"
 
