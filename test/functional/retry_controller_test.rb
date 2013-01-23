@@ -20,17 +20,14 @@ class RetryControllerTest < ActionController::TestCase
     !!(failure && failure['retried_at'])
   end
 
-# FIXME: broken!
-=begin
   it "retries individual jobs" do
     retried?(failure_id).wont_equal true
 
-    post 'create', :failure_id => failure_id
-    assert_redirected_to failure_path(failure_id)
+    post 'create', :failure_id => queue, :id => failure_id
+    assert_redirected_to failure_path(queue)
 
     retried?(failure_id).must_equal true
   end
-=end
 
   it "retries all jobs" do
     retried?(failure_id).must_equal false
