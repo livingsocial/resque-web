@@ -1,5 +1,6 @@
 resque-web
 ==========
+[![Build Status](https://travis-ci.org/resque/resque-web.png?branch=master)](https://travis-ci.org/resque/resque-web)
 
 A Rails-based frontend to the [Resque](https://github.com/defunkt/resque) job
 queue system. This provides a similar interface to the existing Sinatra
