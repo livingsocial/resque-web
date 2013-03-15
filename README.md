@@ -7,6 +7,8 @@ application that comes bundled with Resque, but deploys like a Rails application
 and leverages Rails conventions for factoring things like controllers, helpers,
 and views.
 
-## Getting Started
+More documentation coming soon!
 
-Real documentation coming soon!
+## Screenshot
+
+![Screenshot](http://i.imgur.com/LkNgl.png)
