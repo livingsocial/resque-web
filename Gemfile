@@ -6,6 +6,7 @@ gem 'resque', :git => 'git://github.com/defunkt/resque.git', :branch => "1-x-sta
 
 group :test do
   gem 'minitest-spec-rails'
+  gem 'coveralls', require: false
 end
 
 # Gems used only for assets and not required
