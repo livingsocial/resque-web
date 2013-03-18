@@ -16,8 +16,8 @@ group :assets do
   gem 'jquery-rails'
   gem 'twitter-bootstrap-rails'
 
-  gem 'libv8', '3.3.10.4'
-  gem 'therubyracer', '~> 0.10.0', :platforms => :ruby
+  gem 'libv8', '3.11.8.13'
+  gem 'therubyracer', '~> 0.11.4', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
