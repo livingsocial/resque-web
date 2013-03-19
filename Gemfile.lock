@@ -72,10 +72,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.21)
-    minitest (4.6.2)
-    minitest-spec-rails (4.3.8)
-      minitest (~> 4.3)
+    minitest (4.7.0)
+    minitest-spec-rails (4.7.1)
+      minitest (~> 4.7)
       rails (>= 3.0)
+    minitest-spec-rails-tu-shim (1.9.3.2)
     multi_json (1.7.1)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -161,6 +162,7 @@ DEPENDENCIES
   jquery-rails
   libv8 (= 3.11.8.13)
   minitest-spec-rails
+  minitest-spec-rails-tu-shim
   rails (= 3.2.13)
   resque!
   sass-rails (~> 3.2.3)
