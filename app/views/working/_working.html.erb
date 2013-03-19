@@ -19,11 +19,7 @@
         <% host, pid, queues = worker.to_s.split(':') %>
         <td class="where"><%= link_to "#{host}:#{pid}", worker_path(host) %></td>
         <td class="queues queue">
-          <% if job['queue'] %>
-            <%= link_to job['queue'], queue_path(job['queue']), :class => 'label label-info' %>
-          <% else %>
-            None
-          <% end %>            
+          <%= link_to job['queue'], queue_path(job['queue']), :class => 'label label-info' %>
         </td>
         <td class="process">
           <% if job['queue'] %>

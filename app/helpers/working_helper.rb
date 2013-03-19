@@ -8,7 +8,7 @@ module WorkingHelper
   end
 
   def worker_jobs
-    @worker_jobs ||= workers.zip(jobs).reject { |w, j| w.idle? }
+    @worker_jobs ||= workers.zip(jobs).reject { |w, j| w.idle? || j['queue'].nil? }
   end
 
   def sorted_worker_jobs
