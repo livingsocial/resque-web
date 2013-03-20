@@ -1,3 +1,4 @@
+require 'tooling/profiler/profiler' rescue nil
 require 'coveralls'
 Coveralls.wear! 'rails'
 
