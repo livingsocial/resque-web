@@ -1,4 +1,9 @@
-require 'tooling/profiler/profiler' rescue nil
+begin
+  require 'tooling/profiler/profiler'
+rescue LoadError
+  # Not on rbx, carry on...
+end
+
 require 'coveralls'
 Coveralls.wear! 'rails'
 
