@@ -12,6 +12,8 @@ module StatsHelper
   end
 
   def redis_key_size(key)
+    # FIXME: there's a potential race in this method if a key is modified
+    # "in flight". Not sure how to fix it, unfortunately :(
     case redis_key_type(key)
     when 'none'
       0
@@ -20,7 +22,8 @@ module StatsHelper
     when 'set'
       Resque.redis.scard(key)
     when 'string'
-      Resque.redis.get(key).length
+      string = Resque.redis.get(key)
+      string ? string.length : 0
     when 'zset'
       Resque.redis.zcard(key)
     end
