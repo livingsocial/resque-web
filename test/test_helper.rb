@@ -1,8 +1,5 @@
-begin
-  require 'tooling/profiler/profiler'
-rescue LoadError
-  # Not on rbx, carry on...
-end
+require 'redcard'
+require 'tooling/profiler/profiler' if RedCard.check :rubinius
 
 require 'coveralls'
 Coveralls.wear! 'rails'

@@ -106,6 +106,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcard (1.0.0)
     redis (3.0.3)
     redis-namespace (1.2.1)
       redis (~> 3.0.0)
@@ -164,6 +165,7 @@ DEPENDENCIES
   minitest-spec-rails
   minitest-spec-rails-tu-shim
   rails (= 3.2.13)
+  redcard
   resque!
   sass-rails (~> 3.2.3)
   therubyracer (~> 0.11.4)

@@ -8,6 +8,7 @@ group :test do
   gem 'minitest-spec-rails'
   gem 'minitest-spec-rails-tu-shim', :platforms => :ruby_18
   gem 'coveralls', :require => false
+  gem 'redcard'
 end
 
 # Gems used only for assets and not required
