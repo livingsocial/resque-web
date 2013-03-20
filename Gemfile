@@ -6,9 +6,11 @@ gem 'resque', :git => 'git://github.com/defunkt/resque.git', :branch => "1-x-sta
 
 group :test do
   gem 'minitest-spec-rails'
-  gem 'minitest-spec-rails-tu-shim', :platforms => :ruby_18
   gem 'coveralls', :require => false
   gem 'redcard'
+
+  # Hax for supporting Ruby 1.8
+  gem 'minitest-spec-rails-tu-shim' if RUBY_VERSION[/^1.8/]
 end
 
 # Gems used only for assets and not required
