@@ -11,6 +11,10 @@ module FailuresHelper
     @multiple_failure_queues ||= Resque::Failure.queues.size > 1
   end
 
+  def failure_queue
+    multiple_failure_queues? ? params[:id] : 'failed'
+  end
+
   def failure_size
     @failure_size ||= Resque::Failure.count(params[:id], params[:class])
   end
