@@ -24,7 +24,7 @@ $(function() {
     var relatized = $(this).text();
     
     if ($(this).parents("a").length > 0 || $(this).is("a")) {
-      $(this).relatizeDate()
+      $(this).relativeDate()
       if (!$(this).attr('title')) {
         $(this).attr('title', dt)
       }
@@ -63,7 +63,7 @@ $(function() {
     setInterval(function() {
       $.ajax({dataType: 'text', type: 'get', url: href, success: function(data) {
         $('#main').html(data)
-        $('#main .time').relatizeDate()
+        $('#main .time').relativeDate()
       }})
     }, poll_interval * 1000)
 
