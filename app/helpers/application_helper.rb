@@ -50,6 +50,6 @@ module ApplicationHelper
     else
       text = "<a href='#{h(request.path)}' rel='poll'>Live Poll</a>".html_safe
     end
-    content_tag :p, text, class: 'poll'
+    content_tag :p, text, :class => 'poll'
   end
 end
