@@ -43,4 +43,13 @@ module ApplicationHelper
 
     content_tag :p, raw(markup), :class => 'pagination'
   end
+
+  def poll(polling=false)
+    if polling
+      text = "Last Updated: #{Time.now.strftime("%H:%M:%S")}".html_safe
+    else
+      text = "<a href='#{h(request.path)}' rel='poll'>Live Poll</a>".html_safe
+    end
+    content_tag :p, text, class: 'poll'
+  end
 end
