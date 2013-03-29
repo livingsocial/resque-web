@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/defunkt/resque.git
-  revision: b54781ad74c457e71debdbf5f519fb89d7d943c3
+  remote: git://github.com/resque/resque.git
+  revision: 8ee8a4bb43aeb5a9efcb4f1e9ad5ffd8dd0534e8
   branch: 1-x-stable
   specs:
-    resque (1.23.1)
+    resque (1.24.1)
       mono_logger (~> 1.0)
       multi_json (~> 1.0)
       redis-namespace (~> 1.2)
