@@ -2,7 +2,7 @@ module FailuresHelper
   def each_failure(&block)
     Resque::Failure.each(failure_start_at, failure_per_page, params[:queue], params[:class], &block)
   end
-  
+
   def failure_date_format
     "%Y/%m/%d %T %z"
   end

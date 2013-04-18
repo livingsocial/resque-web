@@ -10,7 +10,9 @@ ResqueWeb::Application.routes.draw do
 
   resources :failures, :constraints => {:failure_id => id_pattern, :id => id_pattern} do
     resources :retry
-    resources :jobs
+    resources :jobs do
+      put 'retry', :on => :member
+    end
   end
 
   delete '/failures' => "failures#destroy"

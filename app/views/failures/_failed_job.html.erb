@@ -17,9 +17,9 @@
         </div>
       <% else %>
         <div class="controls">
-          <%= link_to "Retry", "/failures/#{failure_queue}/retry/#{id}", :method => :put %>
+          <%= link_to "Retry", retry_failure_job_path(:failure_id=>failure_queue,:id=>id), :method => :put %>
           or
-          <%= link_to "Remove", "/failures/#{failure_queue}/jobs/#{id}", :method => :delete %>
+          <%= link_to "Remove", failure_job_path(:failure_id=>failure_queue,:id=>id), :method => :delete %>
         </div>
       <% end %>
     </dd>
