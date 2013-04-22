@@ -8,10 +8,12 @@ group :test do
   gem 'minitest-spec-rails'
   gem 'coveralls', :require => false
   gem 'redcard'
+  gem "mocha", :require => false
 
   # Hax for supporting Ruby 1.8
   gem 'minitest-spec-rails-tu-shim' if RUBY_VERSION[/^1.8/]
 end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
