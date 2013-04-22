@@ -5,12 +5,12 @@
 <% end %>
 
 <% unless failure_size.zero? %>
-<%= form_tag("/failures/#{params[:queue] if params[:queue]}", :method => :delete) do %>
-  <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :confirm => "Are you sure?", :class => 'btn btn-danger' %>
-<% end %>
-<%= form_tag("/failures/#{params[:queue] ? params[:queue] : "all"}/retry") do %>
-  <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :class => 'btn' %>
-<% end %>
+  <%= form_tag(destroy_all_failures_path(:queue=>params[:queue]), :method => :delete) do %>
+    <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :confirm => "Are you sure?", :class => 'btn btn-danger' %>
+  <% end %>
+  <%= form_tag(retry_all_failures_path(:queue=>params[:queue]), :method => :put) do %>
+    <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :class => 'btn' %>
+  <% end %>
 <% end %>
 
 <% if multiple_failure_queues? && !params[:queue] %>
@@ -26,4 +26,5 @@
 </ul>
 
 <%= pagination :start => failure_start_at, :total => failure_size unless params[:class] %>
+
 <% end %>

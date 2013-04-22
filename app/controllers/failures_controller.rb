@@ -1,25 +1,50 @@
 class FailuresController < ApplicationController
-  def show
-    if params[:class]
-      start_at, end_at = 0, Resque::Failure.count(params[:id])
-    else
-      start_at, end_at = view_context.failure_start_at, view_context.failure_end_at
-    end
 
-    @jobs = Resque::Failure.all(start_at, end_at, params[:id]).map.with_index { |j, i| [i, j] }
-
-    if params[:class]
-      @jobs.delete_if do |_, job|
-        next false unless job['payload'] && job['payload']['class']
-        job['payload']['class'].downcase != params[:class].downcase
-      end
-
-      @jobs[view_context.failure_start_at..view_context.failure_end_at]
-    end
+  # Display all jobs in the failure queue
+  #
+  # @param [Hash] params
+  # @option params [String] :class filters failures shown by class
+  # @option params [String] :queue filters failures shown by failure queue name
+  def index
   end
 
+  # remove an individual job from the failure queue
   def destroy
-    Resque::Failure.clear params[:id]
-    redirect_to failures_path
+    Resque::Failure.remove(params[:id])
+    redirect_to failures_path(redirect_params)
   end
+
+  # destroy all jobs from the failure queue
+  def destroy_all
+    queue = params[:queue] || 'failed'
+    Resque::Failure.clear(queue)
+    redirect_to failures_path(redirect_params)
+  end
+
+  # retry an individual job from the failure queue
+  def retry
+    Resque::Failure.requeue(params[:id])
+    redirect_to failures_path(redirect_params)
+  end
+
+  # retry all jobs from the failure queue
+  def retry_all
+    if params[:queue].present? && params[:queue]!="failed"
+      Resque::Failure.requeue_queue(params[:queue])
+    else
+      (0...Resque::Failure.count).each { |id| Resque::Failure.requeue(id) }
+    end
+    redirect_to failures_path(redirect_params)
+  end
+
+  private
+
+  def redirect_params
+    {}.tap do |p|
+      if params[:queue].present?
+        p[:queue] = params[:queue]
+      end
+    end
+  end
+
 end
