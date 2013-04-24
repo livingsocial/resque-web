@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/resque/resque.git
+  remote: https://github.com/resque/resque.git
   revision: 8ee8a4bb43aeb5a9efcb4f1e9ad5ffd8dd0534e8
   branch: 1-x-stable
   specs:
