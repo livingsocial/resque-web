@@ -23,7 +23,7 @@ class FailuresController < ApplicationController
 
   # retry an individual job from the failure queue
   def retry
-    Resque::Failure.requeue(params[:id])
+    reque_single_job(params[:id])
     redirect_to failures_path(redirect_params)
   end
 
@@ -32,12 +32,22 @@ class FailuresController < ApplicationController
     if params[:queue].present? && params[:queue]!="failed"
       Resque::Failure.requeue_queue(params[:queue])
     else
-      (0...Resque::Failure.count).each { |id| Resque::Failure.requeue(id) }
+      (Resque::Failure.count-1).downto(0).each { |id| reque_single_job(id) }
     end
     redirect_to failures_path(redirect_params)
   end
 
   private
+
+  #API agnostic for Resque 2 with duck typing on requeue_and_remove
+  def reque_single_job(id)
+    if Resque::Failure.respond_to?(:requeue_and_remove)
+      Resque::Failure.requeue_and_remove(id)
+    else
+      Resque::Failure.requeue(id)
+      Resque::Failure.remove(id)
+    end
+  end
 
   def redirect_params
     {}.tap do |p|
