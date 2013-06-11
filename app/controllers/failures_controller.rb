@@ -39,7 +39,7 @@ class FailuresController < ApplicationController
 
   private
 
-  #API agnostic for Resque 2 with dock typing on requeue_and_remove
+  #API agnostic for Resque 2 with duck typing on requeue_and_remove
   def reque_single_job(id)
     if Resque::Failure.respond_to?(:requeue_and_remove)
       Resque::Failure.requeue_and_remove(id)
