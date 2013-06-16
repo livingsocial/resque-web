@@ -1,4 +1,7 @@
 module ApplicationHelper
+  
+  PER_PAGE = 20
+
   def tabs
     %w(overview working failures queues workers stats)
   end
@@ -27,17 +30,16 @@ module ApplicationHelper
 
   def pagination(options = {})
     start    = options[:start] || 1
-    per_page = options[:per_page] || 20
+    per_page = options[:per_page] || PER_PAGE
     total    = options[:total] || 0
     return if total < per_page
 
     markup = ""
-
     if start - per_page >= 0
       markup << link_to(raw("&laquo; less"), params.merge(:start => start - per_page), :class => 'btn less')
     end
 
-    if start + 20 <= total
+    if start + per_page <= total
       markup << link_to(raw("more &raquo;"), params.merge(:start => start + per_page), :class => 'btn more')
     end
 
