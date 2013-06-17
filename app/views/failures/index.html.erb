@@ -7,6 +7,9 @@
 <% unless failure_size.zero? %>
   <%= form_tag(destroy_all_failures_path(:queue=>params[:queue]), :method => :delete) do %>
     <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :confirm => "Are you sure?", :class => 'btn btn-danger' %>
+    <% if failure_size >ApplicationHelper::PER_PAGE %>
+        <%= link_to "Last page &raquo;".html_safe, {:start => (failure_size - ApplicationHelper::PER_PAGE)}, :class => 'btn' %>
+    <% end %>          
   <% end %>
   <%= form_tag(retry_all_failures_path(:queue=>params[:queue]), :method => :put) do %>
     <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :class => 'btn' %>
