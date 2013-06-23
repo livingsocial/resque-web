@@ -13,6 +13,25 @@ and views.
 
 More documentation coming soon!
 
+## Starting
+As in any other rails server
+
+```
+rails s
+```
+
+or with predefined port:
+
+```
+rails s -p 9697
+```
+
+and, possibly, with a non default Resque server:
+
+```
+RAILS_RESQUE_REDIS=123.x.0.456:6712 rails s -p 3912
+```
+
 ## Screenshot
 
 ![Screenshot](http://i.imgur.com/LkNgl.png)
