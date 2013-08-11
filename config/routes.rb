@@ -1,7 +1,7 @@
 # Match IDs with dots in them
 id_pattern = /[^\/]+/
 
-ResqueWeb::Application.routes.draw do
+ResqueWeb::Engine.routes.draw do
 
   resource  :overview,  :only => [:show], :controller => :overview
   resources :working,   :only => [:index]
