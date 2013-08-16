@@ -6,7 +6,7 @@ module ResqueWeb
     def tabs
       {'overview' => overview_path,
        'working'  => working_index_path,
-       'failures' => failures_path ,
+       'failures' => failures_path,
        'queues' => queues_path,
        'workers' => workers_path,
        'stats' => stats_path
@@ -18,7 +18,7 @@ module ResqueWeb
     end
 
     def current_tab
-      params[:controller]
+      params[:controller].gsub(/resque_web\//, "#{root_path}")
     end
 
     def current_tab?(name)
@@ -28,7 +28,7 @@ module ResqueWeb
     attr_reader :subtabs
 
     def subtab(name)
-      content_tag :li, link_to(name, "/#{current_tab}/#{name}"), :class => current_subtab?(name) ? "current" : nil
+      content_tag :li, link_to(name, "#{current_tab}/#{name}"), :class => current_subtab?(name) ? "current" : nil
     end
 
     def current_subtab?(name)
