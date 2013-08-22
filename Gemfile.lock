@@ -14,10 +14,10 @@ PATH
   remote: .
   specs:
     resque_web (0.0.1)
-      coffee-rails (~> 3.2.1)
+      coffee-rails
       jquery-rails
       resque
-      sass-rails (~> 3.2.3)
+      sass-rails
       twitter-bootstrap-rails
 
 GEM
