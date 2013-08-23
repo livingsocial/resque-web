@@ -86,6 +86,7 @@ GEM
     minitest-spec-rails (4.7.4)
       minitest (~> 4.7)
       rails (<= 4.0)
+    minitest-spec-rails-tu-shim (1.9.3.4)
     mocha (0.14.0)
       metaclass (~> 0.0.1)
     mono_logger (1.1.0)
@@ -171,6 +172,7 @@ DEPENDENCIES
   coveralls
   libv8 (= 3.11.8.13)
   minitest-spec-rails
+  minitest-spec-rails-tu-shim
   mocha
   rails (= 3.2.13)
   redcard
