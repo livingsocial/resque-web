@@ -12,7 +12,7 @@ group :test do
   gem "mocha", :require => false
 
   # Hax for supporting Ruby 1.8
-  gem 'minitest-spec-rails-tu-shim' if RUBY_VERSION[/^1.8/]
+  gem 'minitest-spec-rails-tu-shim', :platforms => :ruby_18
 end
 
 
