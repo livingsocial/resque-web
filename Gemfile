@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gemspec
 gem 'rails', '3.2.13'
 gem 'resque', :git => 'https://github.com/resque/resque.git', :branch => "1-x-stable"
-gem 'sqlite3'
+
+gem 'sqlite3', :platforms => :ruby
+gem 'activerecord-jdbcsqlite3-adapter', :platforms => :jruby
 
 group :test do
   gem 'minitest-spec-rails'
