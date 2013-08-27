@@ -12,9 +12,6 @@ group :test do
   gem 'coveralls', :require => false
   gem 'redcard'
   gem "mocha", :require => false
-
-  # Hax for supporting Ruby 1.8
-  gem 'minitest-spec-rails-tu-shim', :platforms => :ruby_18
 end
 
 
