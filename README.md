@@ -14,22 +14,24 @@ and views.
 More documentation coming soon!
 
 ## Starting
-As in any other rails server
+Resque web is built as a rails engine.
+
+Add it to your gemfile.
 
 ```
-rails s
+gem 'resque-web'
 ```
 
-or with predefined port:
+Mount it in your config/routes.rb.
 
 ```
-rails s -p 9697
+  mount ResqueWeb::Engine => "/resque_web"
 ```
 
-and, possibly, with a non default Resque server:
+If you need a non-default resque server, use this environment variable.
 
 ```
-RAILS_RESQUE_REDIS=123.x.0.456:6712 rails s -p 3912
+RAILS_RESQUE_REDIS=123.x.0.456:6712
 ```
 
 ## Screenshot
