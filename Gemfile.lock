@@ -13,7 +13,7 @@ GIT
 PATH
   remote: .
   specs:
-    resque_web (0.0.1)
+    resque-web (0.0.1)
       coffee-rails
       jquery-rails
       resque
@@ -185,7 +185,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   redcard
   resque!
-  resque_web!
+  resque-web!
   sqlite3
   therubyracer (~> 0.11.4)
   therubyrhino (= 2.0.2)
