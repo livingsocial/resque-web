@@ -18,14 +18,18 @@ Resque web is built as a rails engine.
 
 Add it to your gemfile.
 
-```
+```Ruby
 gem 'resque-web'
 ```
 
 Mount it in your config/routes.rb.
 
-```
+```Ruby
+require "resque_web"
+
+MyApp::Application.routes.draw do
   mount ResqueWeb::Engine => "/resque_web"
+end
 ```
 
 If you need a non-default resque server, use this environment variable.
