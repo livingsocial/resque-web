@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/resque/resque-web"
   s.summary     = "Rails-based Resque web interface"
   s.description = "A Rails-based frontend to the Resque job queue system."
+  s.licenses    = ['MIT']
 
   s.files = Dir["{app,config,lib}/**/*", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
