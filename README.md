@@ -19,7 +19,7 @@ Resque web is built as a rails engine.
 Add it to your gemfile.
 
 ```Ruby
-gem 'resque-web'
+gem 'resque-web', require: 'resque_web'
 ```
 
 Mount it in your config/routes.rb.
