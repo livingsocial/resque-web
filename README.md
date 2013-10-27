@@ -56,9 +56,8 @@ Another example of a route constraint using the current user when using Devise o
 ```ruby
 # config/routes.rb
 resque_web_constraint = lambda do |request|
-	current_user = request.env['warden'].user
-
-	current_user.present? && current_user.respond_to?(:is_admin?) && current_user.is_admin?
+  current_user = request.env['warden'].user
+  current_user.present? && current_user.respond_to?(:is_admin?) && current_user.is_admin?
 end
 
 constraints resque_web_constraint do
@@ -66,6 +65,10 @@ constraints resque_web_constraint do
 end
 
 ```
+
+### HTTP Basic Authentication
+
+HTTP Basic Authentication is supported out of the box. Simply set the environment variables `RESQUE_WEB_HTTP_BASIC_AUTH_USER` and `RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD` to turn it on. If you're using Resque with Heroku run `heroku config:set RESQUE_WEB_HTTP_BASIC_AUTH_USER=user RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD=secret` to get ResqueWeb secured.
 
 ## Screenshot
 
