@@ -7,6 +7,11 @@ gem 'resque', :git => 'https://github.com/resque/resque.git', :branch => "1-x-st
 gem 'sqlite3', :platforms => :ruby
 gem 'activerecord-jdbcsqlite3-adapter', :platforms => :jruby
 
+group :development, :test do
+  gem "dotenv-rails"
+  gem "rdoc"
+end
+
 group :test do
   gem 'minitest-spec-rails'
   gem 'coveralls', :require => false
