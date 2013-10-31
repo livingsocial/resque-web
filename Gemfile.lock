@@ -13,7 +13,7 @@ GIT
 PATH
   remote: .
   specs:
-    resque-web (0.0.3)
+    resque-web (0.0.4)
       coffee-rails
       jquery-rails
       resque
