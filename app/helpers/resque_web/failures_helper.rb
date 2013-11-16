@@ -16,6 +16,10 @@ module ResqueWeb
       multiple_failure_queues? ? params[:id] : 'failed'
     end
 
+    def failure_queue_name
+      @failure_queue_name ||= params[:queue] ? params[:queue] : 'Failed'
+    end
+
     def failure_size
       @failure_size ||= Resque::Failure.count(params[:id], params[:class])
     end
