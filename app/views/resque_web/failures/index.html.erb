@@ -6,10 +6,10 @@
 
 <% unless failure_size.zero? %>
   <%= form_tag(destroy_all_failures_path(:queue=>params[:queue]), :method => :delete) do %>
-    <%= submit_tag "Clear #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", data: { confirm: "Are you sure?" }, :class => 'btn btn-danger' %>
     <% if failure_size >ResqueWeb::ApplicationHelper::PER_PAGE %>
         <%= link_to "Last page &raquo;".html_safe, {:start => (failure_size - ResqueWeb::ApplicationHelper::PER_PAGE)}, :class => 'btn' %>
     <% end %>          
+    <%= submit_tag "Clear #{failure_queue_name} Jobs", class: 'btn btn-danger', data: { confirm: "Are you sure you want to clear ALL #{failure_queue_name.downcase} jobs?" } %>
   <% end %>
   <%= form_tag(retry_all_failures_path(:queue=>params[:queue]), :method => :put) do %>
     <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :class => 'btn' %>
