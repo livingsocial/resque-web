@@ -94,8 +94,4 @@ $(function() {
     }});
     return false;
   })
-
-  $('#retry-failed-jobs').click(function(){
-    return confirm('Are you sure you want to retry ALL failed jobs?');
-  })
 })

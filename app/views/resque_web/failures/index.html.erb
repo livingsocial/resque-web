@@ -12,7 +12,7 @@
     <%= submit_tag "Clear #{failure_queue_name} Jobs", class: 'btn btn-danger', data: { confirm: "Are you sure you want to clear ALL #{failure_queue_name.downcase} jobs?" } %>
   <% end %>
   <%= form_tag(retry_all_failures_path(:queue=>params[:queue]), :method => :put) do %>
-    <%= submit_tag "Retry #{params[:queue] ? "'#{params[:queue]}'" : 'Failed'} Jobs", :class => 'btn' %>
+    <%= submit_tag "Retry #{failure_queue_name} Jobs", class: 'btn', data: { confirm: "Are you sure you want to retry ALL #{failure_queue_name.downcase} jobs?" } %>
   <% end %>
 <% end %>
 
