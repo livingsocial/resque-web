@@ -15,5 +15,11 @@ module ResqueWeb
       end
     end
 
+    describe "GET /resque" do
+      it "renders the resque page" do
+        visit(:resque)
+        assert_template :resque
+      end
+    end
   end
 end
