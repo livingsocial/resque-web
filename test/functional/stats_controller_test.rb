@@ -29,5 +29,12 @@ module ResqueWeb
       end
     end
 
+
+    describe "GET /keys" do
+      it "renders the keys page" do
+        visit(:keys)
+        assert_template :keys
+      end
+    end
   end
 end
