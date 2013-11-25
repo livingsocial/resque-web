@@ -21,5 +21,13 @@ module ResqueWeb
         assert_template :resque
       end
     end
+
+    describe "GET /redis" do
+      it "renders the redis page" do
+        visit(:redis)
+        assert_template :redis
+      end
+    end
+
   end
 end
