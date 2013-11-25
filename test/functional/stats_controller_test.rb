@@ -36,5 +36,12 @@ module ResqueWeb
         assert_template :keys
       end
     end
+
+    describe "GET /keys/:id" do
+      it "renders the keys page" do
+        visit(:keys, id: "failed")
+        assert_template :key
+      end
+    end
   end
 end
