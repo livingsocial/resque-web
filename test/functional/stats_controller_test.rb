@@ -22,6 +22,13 @@ module ResqueWeb
       end
     end
 
+    describe "GET /resque.json" do
+      it "renders the resque page" do
+        visit(:resque, format: 'json')
+        assert_equal response.body, Hash[Resque.info.sort].to_json
+      end
+    end
+
     describe "GET /redis" do
       it "renders the redis page" do
         visit(:redis)
@@ -29,6 +36,14 @@ module ResqueWeb
       end
     end
 
+    describe "GET /redis.json" do
+      it "renders the redis page" do
+        expected = Resque.redis.info
+        Resque.redis.stubs(:info).returns(expected)
+        visit(:redis, format: 'json')
+        assert_equal response.body, Hash[expected.sort].to_json
+      end
+    end
 
     describe "GET /keys" do
       it "renders the keys page" do
@@ -43,5 +58,13 @@ module ResqueWeb
         assert_template :key
       end
     end
+
+    describe "GET /keys.json" do
+      it "renders the keys page" do
+        visit(:keys, format: 'json')
+        assert_equal response.body, Resque.keys.sort.to_json
+      end
+    end
+
   end
 end
