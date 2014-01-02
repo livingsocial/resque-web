@@ -4,5 +4,6 @@ rvm:
   - 2.0.0
   - jruby-19mode
   - rbx
+services: redis
 before_script:
   - cd test/dummy && RAILS_ENV=test bundle exec rake db:migrate && cd -
