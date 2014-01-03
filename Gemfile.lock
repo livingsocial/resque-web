@@ -125,6 +125,32 @@ GEM
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rubysl-cgi (2.0.1)
+    rubysl-e2mmap (2.0.0)
+    rubysl-erb (2.0.1)
+    rubysl-irb (2.0.4)
+      rubysl-e2mmap (~> 2.0)
+      rubysl-mathn (~> 2.0)
+      rubysl-readline (~> 2.0)
+      rubysl-thread (~> 2.0)
+    rubysl-json (2.0.2)
+    rubysl-logger (2.0.0)
+    rubysl-mathn (2.0.0)
+    rubysl-mutex_m (2.0.0)
+    rubysl-net-http (2.0.4)
+      rubysl-cgi (~> 2.0)
+      rubysl-erb (~> 2.0)
+      rubysl-singleton (~> 2.0)
+    rubysl-readline (2.0.2)
+    rubysl-singleton (2.0.0)
+    rubysl-socket (2.0.1)
+    rubysl-stringio (2.0.0)
+    rubysl-test-unit (2.0.3)
+      minitest (~> 4.7)
+    rubysl-thread (2.0.2)
+    rubysl-timeout (2.0.0)
+    rubysl-uri (2.0.0)
+    rubysl-zlib (2.0.1)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -191,6 +217,18 @@ DEPENDENCIES
   redcard
   resque!
   resque-web!
+  rubysl-cgi
+  rubysl-irb
+  rubysl-json
+  rubysl-logger
+  rubysl-mutex_m
+  rubysl-net-http
+  rubysl-socket
+  rubysl-stringio
+  rubysl-test-unit
+  rubysl-timeout
+  rubysl-uri
+  rubysl-zlib
   sqlite3
   therubyracer (~> 0.11.4)
   therubyrhino (= 2.0.2)
