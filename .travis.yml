@@ -7,3 +7,4 @@ rvm:
 services: redis
 before_script:
   - cd test/dummy && RAILS_ENV=test bundle exec rake db:migrate && cd -
+cache: bundler
