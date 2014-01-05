@@ -33,4 +33,6 @@ platforms :rbx do
   # dependencies and transitive dependencies.
   gem 'rubysl', '~> 2.0'
   gem 'racc'
+  gem 'rubinius-profiler'
+  gem 'rubinius-coverage'
 end

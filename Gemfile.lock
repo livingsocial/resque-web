@@ -127,6 +127,8 @@ GEM
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rubinius-coverage (2.0.3)
+    rubinius-profiler (2.0.0)
     rubysl (2.0.15)
       rubysl-abbrev (~> 2.0)
       rubysl-base64 (~> 2.0)
@@ -396,6 +398,8 @@ DEPENDENCIES
   redcard
   resque!
   resque-web!
+  rubinius-coverage
+  rubinius-profiler
   rubysl (~> 2.0)
   sqlite3
   therubyracer (~> 0.11.4)

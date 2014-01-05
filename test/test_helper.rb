@@ -1,5 +1,5 @@
 require 'redcard'
-require 'tooling/profiler/profiler' if RedCard.check :rubinius
+require 'profiler' if RedCard.check :rubinius
 
 require 'coveralls'
 Coveralls.wear! 'rails'
