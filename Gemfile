@@ -27,3 +27,12 @@ group :assets do
   gem 'therubyracer', '~> 0.11.4', :platforms => :ruby
   gem 'therubyrhino', '2.0.2',     :platforms => :jruby
 end
+
+platforms :rbx do
+  # These are the ruby standard library
+  # dependencies and transitive dependencies.
+  gem 'rubysl', '~> 2.0'
+  gem 'racc'
+  gem 'rubinius-profiler'
+  gem 'rubinius-coverage'
+end
