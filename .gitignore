@@ -25,3 +25,5 @@ test/dummy/.sass-cache
 *.gem
 vendor/ruby
 *.rdb
+Vagrantfile
+.vagrant

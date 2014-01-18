@@ -2,6 +2,9 @@ module ResqueWeb
   class WorkersController < ApplicationController
     before_filter :display_subtabs
 
+    def index
+    end
+
     def show
       if params[:id] && params[:id] != 'all'
         @workers = view_context.worker_hosts[params[:id]].map { |id| Resque::Worker.find(id) }
@@ -10,9 +13,11 @@ module ResqueWeb
       end
     end
 
+    private
+
     def display_subtabs
       set_subtabs view_context.worker_hosts.map(&:first)
     end
-    private :display_subtabs
+
   end
 end
