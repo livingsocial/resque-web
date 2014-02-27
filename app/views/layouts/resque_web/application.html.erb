@@ -21,7 +21,7 @@
         <span class="icon-bar"></span>
       </a>
       <%= image_tag "resque_web/lifebuoy.png", class: 'logo' %>
-      <%= link_to "Resque.", root_path, :class => "brand" %>
+      <%= link_to "Resque.", ResqueWeb::Engine.app.url_helpers.root_path, :class => "brand" %>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <% tabs.each do |tab_name,path| %>

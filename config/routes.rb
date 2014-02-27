@@ -3,6 +3,10 @@ id_pattern = /[^\/]+/
 
 ResqueWeb::Engine.routes.draw do
 
+  ResqueWeb::Plugins.plugins.each do |p|
+    mount p::Engine => p.engine_path
+  end
+
   resource  :overview,  :only => [:show], :controller => :overview
   resources :working,   :only => [:index]
   resources :queues,    :only => [:index,:show,:destroy], :constraints => {:id => id_pattern}
