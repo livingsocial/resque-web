@@ -77,6 +77,12 @@ end
 
 HTTP Basic Authentication is supported out of the box. Simply set the environment variables `RESQUE_WEB_HTTP_BASIC_AUTH_USER` and `RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD` to turn it on. If you're using Resque with Heroku run `heroku config:set RESQUE_WEB_HTTP_BASIC_AUTH_USER=user RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD=secret` to get ResqueWeb secured.
 
+## Plugins
+
+In the past with the sinatra app it was fairly simple to just monkey-patch the
+server to add more functionality/tabs. With this rails version you have to write
+an engine under a specific namespace. Read more in PLUGINS.md.
+
 ## Screenshot
 
 ![Screenshot](http://i.imgur.com/LkNgl.png)
