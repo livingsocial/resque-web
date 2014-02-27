@@ -11,6 +11,7 @@ application that comes bundled with Resque, but deploys like a Rails application
 and leverages Rails conventions for factoring things like controllers, helpers,
 and views.
 
+# NOTICE
 Note this is NOT the old sinatra interface that comes with Resque 1-x. This is
 a new project based on rails. If you have any issues with old web server,
 please file an issue on the [resque](https://github.com/resque/resque) project.
