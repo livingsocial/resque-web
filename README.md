@@ -1,9 +1,9 @@
 resque-web
 ==========
-[![Build Status](https://travis-ci.org/resque/resque-web.png?branch=master)](https://travis-ci.org/resque/resque-web)
-[![Dependency Status](https://gemnasium.com/resque/resque-web.png)](https://gemnasium.com/resque/resque-web)
-[![Code Climate](https://codeclimate.com/github/resque/resque-web.png)](https://codeclimate.com/github/resque/resque-web)
-[![Coverage Status](https://coveralls.io/repos/resque/resque-web/badge.png?branch=master)](https://coveralls.io/r/resque/resque-web)
+[![Build Status](https://img.shields.io/travis/resque/master.svg)](https://travis-ci.org/resque/resque-web)
+[![Dependency Status](https://img.shields.io/gemnasium/resque/resque-web.svg)](https://gemnasium.com/resque/resque-web)
+[![Code Climate](https://img.shields.io/codeclimate/github/resque/resque-web.svg)](https://codeclimate.com/github/resque/resque-web)
+[![Coverage Status](https://img.shields.io/coveralls/resque/resque-web/master.svg)](https://coveralls.io/r/resque/resque-web)
 
 A Rails-based frontend to the [Resque](https://github.com/resque/resque) job
 queue system. This provides a similar interface to the existing Sinatra
