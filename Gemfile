@@ -22,9 +22,9 @@ end
 
 gem 'uglifier', '>= 1.0.3'
 
-gem 'libv8',        '3.11.8.13', :platforms => :ruby
-gem 'therubyracer', '~> 0.11.4', :platforms => :ruby
-gem 'therubyrhino', '2.0.2',     :platforms => :jruby
+gem 'libv8',        '~> 3.16.14.3', :platforms => :ruby
+gem 'therubyracer', '~> 0.12.1',    :platforms => :ruby
+gem 'therubyrhino', '2.0.2',        :platforms => :jruby
 
 platforms :rbx do
   # These are the ruby standard library
