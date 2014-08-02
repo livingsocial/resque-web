@@ -13,5 +13,10 @@ module ResqueWeb
       redirect_to queues_path
     end
 
+    def clear
+      Resque.redis.del("queue:#{params[:id]}")
+      redirect_to queue_path(params[:id])
+    end
+
   end
 end
