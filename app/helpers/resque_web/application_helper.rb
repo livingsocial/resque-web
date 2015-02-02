@@ -26,7 +26,7 @@ module ResqueWeb
     end
 
     def current_tab?(name)
-      params[:controller] == name.to_s
+      params[:controller].gsub(/resque_web\//, "") == name.to_s
     end
 
     attr_reader :subtabs
