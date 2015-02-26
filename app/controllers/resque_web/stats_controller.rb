@@ -1,5 +1,5 @@
 module ResqueWeb
-  class StatsController < ApplicationController
+  class StatsController < ResqueWeb::ApplicationController
     subtabs :resque, :redis, :keys
 
     def index

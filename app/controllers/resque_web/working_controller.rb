@@ -1,5 +1,5 @@
 module ResqueWeb
-  class WorkingController < ApplicationController
+  class WorkingController < ResqueWeb::ApplicationController
 
     def index
     end

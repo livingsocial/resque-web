@@ -1,5 +1,5 @@
 module ResqueWeb
-  class FailuresController < ApplicationController
+  class FailuresController < ResqueWeb::ApplicationController
 
     # Display all jobs in the failure queue
     #
