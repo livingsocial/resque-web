@@ -1,5 +1,5 @@
 module ResqueWeb
-  class OverviewController < ApplicationController
+  class OverviewController < ResqueWeb::ApplicationController
     def show
       render :layout => !request.xhr?, :locals => { :polling => request.xhr? }
     end

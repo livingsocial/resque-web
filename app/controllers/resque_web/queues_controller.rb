@@ -1,5 +1,5 @@
 module ResqueWeb
-  class QueuesController < ApplicationController
+  class QueuesController < ResqueWeb::ApplicationController
 
     def index
     end
