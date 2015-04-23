@@ -6,8 +6,18 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <title>Resque.</title>
-  <%= stylesheet_link_tag    "resque_web/application", :media => "all" %>
+  <%= stylesheet_link_tag "resque_web/application", :media => "all" %>
+  <%=
+      ResqueWeb::Plugins.plugins.collect do |p|
+        stylesheet_link_tag "#{p.name.underscore.downcase}/application"
+      end.join("\n").html_safe
+  %>
   <%= javascript_include_tag "resque_web/application" %>
+  <%=
+      ResqueWeb::Plugins.plugins.collect do |p|
+        javascript_include_tag "#{p.name.underscore.downcase}/application"
+      end.join("\n").html_safe
+  %>
   <%= csrf_meta_tags %>
 </head>
 <body>
