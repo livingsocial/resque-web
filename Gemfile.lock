@@ -83,7 +83,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     json (1.8.1-java)
-    libv8 (3.16.14.3)
+    libv8 (3.16.14.7)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
