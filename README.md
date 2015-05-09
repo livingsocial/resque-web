@@ -1,7 +1,7 @@
 resque-web
 ==========
 [![Gem Version](http://img.shields.io/gem/v/resque-web.svg)](https://rubygems.org/gems/resque-web)
-[![Build Status](https://img.shields.io/travis/resque/resque_web.svg)](https://travis-ci.org/resque/resque-web)
+[![Build Status](https://img.shields.io/travis/resque/resque-web.svg)](https://travis-ci.org/resque/resque-web)
 [![Dependency Status](https://img.shields.io/gemnasium/resque/resque-web.svg)](https://gemnasium.com/resque/resque-web)
 [![Code Climate](https://img.shields.io/codeclimate/github/resque/resque-web.svg)](https://codeclimate.com/github/resque/resque-web)
 [![Coverage Status](https://img.shields.io/coveralls/resque/resque-web/master.svg)](https://coveralls.io/r/resque/resque-web)
