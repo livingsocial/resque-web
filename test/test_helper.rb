@@ -1,3 +1,6 @@
+require 'dotenv'
+Dotenv.load!
+
 require 'redcard'
 require 'profiler' if RedCard.check :rubinius
 
