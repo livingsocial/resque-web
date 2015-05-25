@@ -9,13 +9,17 @@
   <%= stylesheet_link_tag "resque_web/application", :media => "all" %>
   <%=
       ResqueWeb::Plugins.plugins.collect do |p|
-        stylesheet_link_tag "#{p.name.underscore.downcase}/application"
+        if Rails.application.assets.find_asset("#{p.name.underscore.downcase}/application.css")
+          stylesheet_link_tag "#{p.name.underscore.downcase}/application"
+        end
       end.join("\n").html_safe
   %>
   <%= javascript_include_tag "resque_web/application" %>
   <%=
       ResqueWeb::Plugins.plugins.collect do |p|
-        javascript_include_tag "#{p.name.underscore.downcase}/application"
+        if Rails.application.assets.find_asset("#{p.name.underscore.downcase}/application.js")
+          javascript_include_tag "#{p.name.underscore.downcase}/application"
+        end
       end.join("\n").html_safe
   %>
   <%= csrf_meta_tags %>
