@@ -27,4 +27,3 @@ vendor/ruby
 *.rdb
 Vagrantfile
 .vagrant
-
