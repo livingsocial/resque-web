@@ -2,7 +2,7 @@
 
   <%= form_tag(clear_queue_path(params[:id]), :method => :put) do %>
     <%= submit_tag "Clear Pending Jobs", :class => 'btn btn-danger', :data => { :confirm => "Are you absolutely sure? This cannot be undone." } %>
-  <% end % %>
+  <% end %>
 
   <%= form_tag(queue_path(params[:id]), :method => :delete, :class => 'remove-queue') do %>
     <%= submit_tag "Remove Queue", :class => 'btn btn-danger', :data => { :confirm => "Are you absolutely sure? This cannot be undone." } %>
