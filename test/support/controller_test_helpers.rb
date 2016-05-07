@@ -14,7 +14,7 @@ module ControllerTestHelpers
       ) unless options[:auth] == false
     end
 
-    send(method, action, params)
+    send(method, action, params: params)
 
     ENV["RESQUE_WEB_HTTP_BASIC_AUTH_USER"] = user
     ENV["RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD"] = password

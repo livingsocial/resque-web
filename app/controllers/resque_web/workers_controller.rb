@@ -1,6 +1,6 @@
 module ResqueWeb
   class WorkersController < ResqueWeb::ApplicationController
-    before_filter :display_subtabs
+    before_action :display_subtabs
 
     def index
     end

@@ -41,11 +41,11 @@ module ResqueWeb
         ) unless options[:auth] == false
       end
 
-    send(method, action, params, env)
+      send(method, action, params: params, env: env)
 
-    ENV["RESQUE_WEB_HTTP_BASIC_AUTH_USER"] = user
-    ENV["RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD"] = password
-  end
+      ENV["RESQUE_WEB_HTTP_BASIC_AUTH_USER"] = user
+      ENV["RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD"] = password
+    end
 
     setup do
       @routes = Engine.routes
