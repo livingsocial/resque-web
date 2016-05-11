@@ -9,7 +9,9 @@
   <%= stylesheet_link_tag "resque_web/application", :media => "all" %>
   <%=
       ResqueWeb::Plugins.plugins.collect do |p|
-        if Rails.application.assets.find_asset("#{p.name.underscore.downcase}/application.css")
+        file_path = "#{p.name.underscore.downcase}/application.css"
+        if (Rails.application.assets && Rails.application.assets.find_asset(file_path)) ||
+           (Rails.application.assets_manifest && Rails.application.assets_manifest.assets[file_path])
           stylesheet_link_tag "#{p.name.underscore.downcase}/application"
         end
       end.join("\n").html_safe
@@ -17,7 +19,9 @@
   <%= javascript_include_tag "resque_web/application" %>
   <%=
       ResqueWeb::Plugins.plugins.collect do |p|
-        if Rails.application.assets.find_asset("#{p.name.underscore.downcase}/application.js")
+        file_path = "#{p.name.underscore.downcase}/application.js"
+        if (Rails.application.assets && Rails.application.assets.find_asset(file_path)) ||
+           (Rails.application.assets_manifest && Rails.application.assets_manifest.assets[file_path])
           javascript_include_tag "#{p.name.underscore.downcase}/application"
         end
       end.join("\n").html_safe
