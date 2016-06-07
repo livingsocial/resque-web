@@ -7,7 +7,6 @@ module ResqueWeb
     # @option params [String] :class filters failures shown by class
     # @option params [String] :queue filters failures shown by failure queue name
     def index
-      params = params.permit(:class, :per_page, :queue, :start)
     end
 
     # remove an individual job from the failure queue
