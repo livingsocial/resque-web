@@ -47,11 +47,11 @@ module ResqueWeb
 
       markup = ""
       if start - per_page >= 0
-        markup << link_to(raw("&laquo; less"), params.merge(:start => start - per_page), :class => 'btn less')
+        markup << link_to(raw("&laquo; less"), params.permit!.merge(:start => start - per_page), :class => 'btn less')
       end
 
       if start + per_page <= total
-        markup << link_to(raw("more &raquo;"), params.merge(:start => start + per_page), :class => 'btn more')
+        markup << link_to(raw("more &raquo;"), params.permit!.merge(:start => start + per_page), :class => 'btn more')
       end
 
       content_tag :p, raw(markup), :class => 'pagination'
