@@ -110,7 +110,7 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
-    libv8 (3.16.14.7)
+    libv8 (3.16.14.15)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -405,7 +405,7 @@ GEM
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
-    therubyrhino (2.0.2)
+    therubyrhino (2.0.4)
       therubyrhino_jar (>= 1.7.3)
     therubyrhino_jar (1.7.6)
     thor (0.19.1)
@@ -443,7 +443,7 @@ DEPENDENCIES
   activerecord-jdbcsqlite3-adapter
   coveralls
   dotenv-rails
-  libv8 (~> 3.16.14.3)
+  libv8 (~> 3.16.14.15)
   minitest-spec-rails
   mocha
   racc
@@ -457,8 +457,8 @@ DEPENDENCIES
   rubinius-profiler
   rubysl (~> 2.0)
   sqlite3
-  therubyracer (~> 0.12.1)
-  therubyrhino (= 2.0.2)
+  therubyracer (~> 0.12.2)
+  therubyrhino (= 2.0.4)
   uglifier (>= 1.0.3)
 
 BUNDLED WITH
