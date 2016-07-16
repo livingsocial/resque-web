@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gemspec
-gem 'rails', '~> 5.0.0.rc1'
+gem 'rails', '~> 5.0.0'
 gem 'resque', github: 'resque'
 
 gem 'sqlite3', :platforms => :ruby
