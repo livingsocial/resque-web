@@ -11,7 +11,7 @@ ResqueWeb::Engine.routes.draw do
   resources :working,   :only => [:index]
   resources :queues,    :only => [:index,:show,:destroy], :constraints => {:id => id_pattern} do
     member do
-      put 'clear' 
+      put 'clear'
     end
   end
   resources :workers,   :only => [:index,:show], :constraints => {:id => id_pattern}
@@ -25,9 +25,11 @@ ResqueWeb::Engine.routes.draw do
     end
   end
 
-  get '/stats' => "stats#index"
-  get '/stats/:action',     :controller => :stats
-  get '/stats/:action/:id', :controller => :stats, :constraints => {:id => id_pattern}, :as => :statistic
+  get '/stats' => 'stats#index'
+  get '/stats/resque' => 'stats#resque'
+  get '/stats/redis' => 'stats#redis'
+  get '/stats/keys' => 'stats#keys'
+  get '/stats/keys/:id' => 'stats#resque', :constraints => { :id => id_pattern }, as: :keys_statistic
 
   root :to => 'overview#show'
 

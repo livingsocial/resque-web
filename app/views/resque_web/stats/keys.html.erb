@@ -9,7 +9,7 @@
     </tr>
   <% Resque.keys.sort.each do |key| %>
     <tr>
-      <th><%= link_to key, statistic_path("keys", key) %></th>
+      <th><%= link_to key, keys_statistic_path(key) %></th>
       <td><%= redis_key_type key %></td>
       <td><%= redis_key_size key %></td>
     </tr>

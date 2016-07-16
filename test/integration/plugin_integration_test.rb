@@ -9,7 +9,7 @@ module ResqueWeb
       end
       class PlugintestController < ApplicationController
         def index
-          render text: "hello from test plugin", layout: true
+          render html: "hello from test plugin", layout: true
         end
       end
 
