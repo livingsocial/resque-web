@@ -1,9 +1,8 @@
 GIT
-  remote: https://github.com/resque/resque.git
-  revision: 1deabd94d5091db38e05e9ad838d5066126aa1ea
-  branch: 1-x-stable
+  remote: git://github.com/resque/resque.git
+  revision: 5338646b6c19ed5f290fbf16a95e80cb4a33155d
   specs:
-    resque (1.26.0)
+    resque (1.27.0)
       mono_logger (~> 1.0)
       multi_json (~> 1.0)
       redis-namespace (~> 1.3)
@@ -74,9 +73,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    commonjs (0.2.7)
     concurrent-ruby (1.0.2)
     concurrent-ruby (1.0.2-java)
-    commonjs (0.2.7)
     coveralls (0.8.1)
       json (~> 1.8)
       rest-client (>= 1.6.8, < 2)
@@ -126,7 +125,7 @@ GEM
     mocha (1.1.0)
       metaclass (~> 0.0.1)
     mono_logger (1.1.0)
-    multi_json (1.12.0)
+    multi_json (1.12.1)
     netrc (0.10.3)
     nio4r (1.2.1)
     nio4r (1.2.1-java)
@@ -464,4 +463,4 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
 
 BUNDLED WITH
-   1.12.3
+   1.12.5
