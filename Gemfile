@@ -5,11 +5,12 @@ gem 'rails', '~> 5.0.0'
 gem 'resque', github: 'resque'
 
 gem 'sqlite3', :platforms => :ruby
-gem 'activerecord-jdbcsqlite3-adapter', :platforms => :jruby
+gem 'activerecord-jdbcsqlite3-adapter', github: 'jruby/activerecord-jdbc-adapter', branch: 'rails-5', :platforms => :jruby
 
 group :development, :test do
   gem "dotenv-rails"
   gem "rdoc"
+  gem 'listen', '~> 3.0.5'
 end
 
 group :test do

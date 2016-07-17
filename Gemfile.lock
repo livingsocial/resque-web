@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/jruby/activerecord-jdbc-adapter.git
+  revision: c3570ce730ae013df6644b2d4d6c68080e09ee6a
+  branch: rails-5
+  specs:
+    activerecord-jdbc-adapter (1.3.20)
+      activerecord (>= 2.2)
+    activerecord-jdbcsqlite3-adapter (1.3.20)
+      activerecord-jdbc-adapter (~> 1.3.20)
+      jdbc-sqlite3 (>= 3.7.2, < 3.9)
+
+GIT
   remote: git://github.com/resque/resque.git
   revision: 5338646b6c19ed5f290fbf16a95e80cb4a33155d
   specs:
@@ -54,11 +65,6 @@ GEM
       activemodel (= 5.0.0)
       activesupport (= 5.0.0)
       arel (~> 7.0)
-    activerecord-jdbc-adapter (1.3.16)
-      activerecord (>= 2.2)
-    activerecord-jdbcsqlite3-adapter (1.3.16)
-      activerecord-jdbc-adapter (~> 1.3.16)
-      jdbc-sqlite3 (>= 3.7.2, < 3.9)
     activesupport (5.0.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
@@ -90,13 +96,15 @@ GEM
       dotenv (= 2.0.1)
     erubis (2.7.0)
     execjs (2.5.2)
+    ffi (1.9.14)
+    ffi (1.9.14-java)
     ffi2-generators (0.1.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
-    jdbc-sqlite3 (3.8.10.1)
+    jdbc-sqlite3 (3.8.11.2)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -111,6 +119,9 @@ GEM
       sprockets (> 2, < 4)
       tilt
     libv8 (3.16.14.15)
+    listen (3.0.8)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -167,6 +178,9 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.2.2)
+    rb-fsevent (0.9.7)
+    rb-inotify (0.9.7)
+      ffi (>= 0.5.0)
     rdoc (4.2.0)
     redcard (1.1.0)
     redis (3.3.0)
@@ -440,10 +454,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-jdbcsqlite3-adapter
+  activerecord-jdbcsqlite3-adapter!
   coveralls
   dotenv-rails
   libv8 (~> 3.16.14.15)
+  listen (~> 3.0.5)
   minitest-spec-rails
   mocha
   racc
