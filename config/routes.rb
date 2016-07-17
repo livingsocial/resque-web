@@ -29,7 +29,7 @@ ResqueWeb::Engine.routes.draw do
   get '/stats/resque' => 'stats#resque'
   get '/stats/redis' => 'stats#redis'
   get '/stats/keys' => 'stats#keys'
-  get '/stats/keys/:id' => 'stats#resque', :constraints => { :id => id_pattern }, as: :keys_statistic
+  get '/stats/keys/:id' => 'stats#keys', :constraints => { :id => id_pattern }, as: :keys_statistic
 
   root :to => 'overview#show'
 
