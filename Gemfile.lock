@@ -23,7 +23,7 @@ GIT
 PATH
   remote: .
   specs:
-    resque-web (0.0.8)
+    resque-web (0.0.9)
       coffee-rails
       jquery-rails
       resque
@@ -105,7 +105,7 @@ GEM
       domain_name (~> 0.5)
     i18n (0.7.0)
     jdbc-sqlite3 (3.8.11.2)
-    jquery-rails (4.1.1)
+    jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -393,7 +393,7 @@ GEM
     rubysl-yaml (2.1.0)
     rubysl-zlib (2.0.1)
     sass (3.4.22)
-    sass-rails (5.0.5)
+    sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
