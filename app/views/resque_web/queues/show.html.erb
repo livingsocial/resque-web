@@ -11,11 +11,13 @@
   <p class="sub">Showing <%= queue_start_at %> to <%= queue_end_at %> of <b><%= queue_size %></b> jobs</p>
   <table class="table table-bordered jobs">
     <tr>
+      <th>ID</th>
       <th>Class</th>
       <th>Args</th>
     </tr>
     <% queue_jobs.each do |job| %>
     <tr>
+      <td class='id'><%= job['id'] %></td>
       <td class='class'><%= job['class'] %></td>
       <td class='args'><%=h job['args'].inspect %></td>
     </tr>
