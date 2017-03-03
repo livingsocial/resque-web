@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "resque"
   s.add_dependency 'twitter-bootstrap-rails'
+  s.add_dependency 'font-awesome-sass'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'sass-rails'
   s.add_dependency 'coffee-rails'
