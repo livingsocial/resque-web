@@ -40,11 +40,11 @@ MyApp::Application.routes.draw do
 end
 ```
 
-If you need a non-default resque server, use this environment variable.
+If `RAILS_RESQUE_REDIS` is set in `ENV` and is not the empty string, this gem will set `Resque.redis` equal to `ENV['RAILS_RESQUE_REDIS']` in an initializer.
 
-```
-RAILS_RESQUE_REDIS=123.x.0.456:6712
-```
+For info on configuring Resque itself (and accepted values of `Resque.redis`) see [the Configuration section of the Resque README](https://github.com/resque/resque#configuration).
+
+
 ## Security
 
 You almost certainly want to limit access when using resque-web in production. Using [routes constraints](http://guides.rubyonrails.org/routing.html#request-based-constraints) is one way to achieve this:
