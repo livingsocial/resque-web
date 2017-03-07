@@ -3,7 +3,7 @@ PATH
   specs:
     resque-web (0.0.9)
       coffee-rails
-      font-awesome-rails
+      font-awesome-sass
       jquery-rails
       resque
       sass-rails
@@ -74,8 +74,8 @@ GEM
       railties (>= 3.2, < 5.1)
     erubis (2.7.0)
     execjs (2.7.0)
-    font-awesome-rails (4.7.0.1)
-      railties (>= 3.2, < 5.1)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.1)
