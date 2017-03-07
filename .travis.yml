@@ -5,12 +5,6 @@ rvm:
   - 2.2.6
   - 2.3.3
   - 2.4.0
-  - jruby-9.0.5.0
-  - jruby-9.1.8.0
-  - rbx
 services: redis
 before_script:
   - cd test/dummy && RAILS_ENV=test bundle exec rake db:migrate && cd -
-matrix:
-  allow_failures:
-    - rvm: rbx
