@@ -61,20 +61,20 @@ module ResqueWeb
     end
 
     describe "resque web plugins" do
-      # it "adds the routes" do
-      #   paths = @routes.routes.map{|m| m.path.spec.to_s}
-      #   paths.must_include "/plugin_test"
-      # end
+      it "adds the routes" do
+        paths = @routes.routes.map{|m| m.path.spec.to_s}
+        paths.must_include "/plugin_test"
+      end
 
       it "renders the plugins action" do
         visit "/resque_web/plugin_test/plugintest"
         @response.body.must_include "hello from test plugin"
       end
 
-      # it "adds a tab for the plugin" do
-      #   visit "/resque_web/"
-      #   @response.body.must_include "<a href=\"/resque_web/plugin_test/plugintest\">Plugin test</a>"
-      # end
+      it "adds a tab for the plugin" do
+        visit "/resque_web/"
+        @response.body.must_include "<a href=\"/resque_web/plugin_test/plugintest\">Plugin test</a>"
+      end
     end
   end
 end
