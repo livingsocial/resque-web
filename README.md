@@ -87,3 +87,22 @@ an engine under a specific namespace. Read more in PLUGINS.md.
 ## Screenshot
 
 ![Screenshot](http://i.imgur.com/LkNgl.png)
+
+## Developing
+
+We use [Appraisal](https://github.com/thoughtbot/appraisal) to test gem across multiple rails version.
+
+To run tests locally you need to install generic dependencies and dependencies for each appraisal version by running:
+
+```
+bundle install
+appraisal install
+```
+
+And then you can use following command for testing lib with latest rails version 5.0:
+
+```
+appraisal rails50 rake test
+```
+
+If you want to run tests for all rails version like Travis do check out this library: (WWTD)[https://github.com/grosser/wwtd].

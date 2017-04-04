@@ -1,4 +1,5 @@
 require 'twitter-bootstrap-rails'
+require 'font-awesome-sass'
 require 'jquery-rails'
 
 module ResqueWeb
