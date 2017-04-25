@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.licenses    = ['MIT']
 
   s.files = Dir["{app,config,lib}/**/*", "Rakefile", "README.md"]
-  s.test_files = Dir["test/**/*"]
 
   s.add_dependency "resque"
   s.add_dependency 'twitter-bootstrap-rails'
