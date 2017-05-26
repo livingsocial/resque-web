@@ -10,7 +10,6 @@ gem "minitest-spec-rails"
 gem "coveralls", :require => false
 gem "redcard"
 gem "mocha", :require => false
-gem "pry"
 gem "rails", "~> 4.0.13"
 gem "nokogiri", "~> 1.6.0"
 

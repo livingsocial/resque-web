@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    resque-web (0.0.9)
+    resque-web (0.0.11)
       coffee-rails
       font-awesome-sass
       jquery-rails
