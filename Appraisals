@@ -20,4 +20,9 @@ if RUBY_VERSION >= "2.2.0"
     gem 'rails', '~> 5.0.3'
     gem 'rails-controller-testing'
   end
+
+  appraise 'rails51' do
+    gem 'rails', '~> 5.1.1'
+    gem 'rails-controller-testing'
+  end
 end
