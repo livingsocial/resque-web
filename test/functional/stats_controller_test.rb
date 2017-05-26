@@ -38,8 +38,8 @@ module ResqueWeb
 
     describe "GET /redis.json" do
       it "renders the redis page" do
-        expected = Resque.redis.info
-        Resque.redis.stubs(:info).returns(expected)
+        expected = Resque.redis.redis.info
+        Resque.redis.redis.stubs(:info).returns(expected)
         visit(:redis, format: 'json')
         assert_equal response.body, Hash[expected.sort].to_json
       end

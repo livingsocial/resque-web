@@ -26,7 +26,7 @@ module ResqueWeb
     describe "DELETE /failures/destroy_all" do
       it "deletes all failures" do
         Resque::Failure.expects(:clear).with('failed')
-        visit(:destroy_all, nil, :method => :delete)
+        visit(:destroy_all, {}, :method => :delete)
         assert_redirected_to failures_path
       end
     end
@@ -51,7 +51,7 @@ module ResqueWeb
         Resque::Failure.stubs(:requeue_and_remove).returns(true)
         Resque::Failure.expects(:requeue_and_remove).with(0)
         Resque::Failure.expects(:requeue_and_remove).with(1)
-        visit(:retry_all, nil, :method => :put)
+        visit(:retry_all, {}, :method => :put)
         assert_redirected_to failures_path
       end
       it "retries all failures should also work case of pre 2.0 Resque" do
@@ -61,7 +61,7 @@ module ResqueWeb
         Resque::Failure.expects(:remove).with(0)
         Resque::Failure.expects(:requeue).with(1)
         Resque::Failure.expects(:remove).with(1)
-        visit(:retry_all, nil, :method => :put)
+        visit(:retry_all, {}, :method => :put)
         assert_redirected_to failures_path
       end
       it "retries all failures using requeue_queue if queue specified" do

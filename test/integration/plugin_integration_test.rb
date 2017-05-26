@@ -9,7 +9,11 @@ module ResqueWeb
       end
       class PlugintestController < ApplicationController
         def index
-          render html: "hello from test plugin", layout: true
+          if Rails.version >= '4.1.0'
+            render html: "hello from test plugin", layout: true
+          else
+            render text: "hello from test plugin", layout: true
+          end
         end
       end
 
@@ -41,7 +45,11 @@ module ResqueWeb
         ) unless options[:auth] == false
       end
 
-      send(method, action, params: params, env: env)
+      if Rails.version >= '5.0.0'
+        send(method, action, params: params, env: env)
+      else
+        send(method, action, params, env)
+      end
 
       ENV["RESQUE_WEB_HTTP_BASIC_AUTH_USER"] = user
       ENV["RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD"] = password
