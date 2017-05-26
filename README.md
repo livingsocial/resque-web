@@ -84,6 +84,10 @@ In the past with the sinatra app it was fairly simple to just monkey-patch the
 server to add more functionality/tabs. With this rails version you have to write
 an engine under a specific namespace. Read more in PLUGINS.md.
 
+## Existing plugins
+
+- https://github.com/mattgibson/resque-scheduler-web
+
 ## Screenshot
 
 ![Screenshot](http://i.imgur.com/LkNgl.png)
