@@ -16,7 +16,7 @@
     <% sorted_worker_jobs.each do |worker, job| %>
       <tr>
         <td class="icon"><%= image_tag "resque_web/#{worker.state}.png", :alt => worker.state, :title => worker.state %></td>
-        <% host, pid, queues = worker.to_s.split(':') %>
+        <% host, pid, _ = worker.to_s.split(':') %>
         <td class="where"><%= link_to "#{host}:#{pid}", worker_path(host) %></td>
         <td class="queues queue">
           <%= link_to job['queue'], queue_path(job['queue']), :class => 'label label-info' %>

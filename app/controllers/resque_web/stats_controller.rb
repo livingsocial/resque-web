@@ -16,7 +16,7 @@ module ResqueWeb
     def redis
       respond_to do |format|
         format.html
-        format.json { render json: Hash[Resque.redis.info.sort] }
+        format.json { render json: Hash[Resque.redis.redis.info.sort] }
       end
     end
 

@@ -5,7 +5,7 @@ module ResqueWeb
     end
 
     def redis_info
-      Resque.redis.info.to_a.sort_by { |i| i[0].to_s }
+      Resque.redis.redis.info.to_a.sort_by { |i| i[0].to_s }
     end
 
     def redis_key_type(key)

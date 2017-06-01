@@ -28,3 +28,7 @@ vendor/ruby
 Vagrantfile
 .vagrant
 .idea
+
+# wwtd
+gemfiles/.bundle
+vendor/
