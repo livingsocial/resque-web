@@ -45,6 +45,9 @@
           <% tabs.each do |tab_name,path| %>
             <%= tab tab_name,path %>
           <% end %>
+          <% if respond_to?(:main_app) %>
+            <li><%= link_to "Return to Application", main_app.root_path, :class => "nav navbar-nav" %></li>
+          <% end %>
         </ul>
       </div>
     </div>
