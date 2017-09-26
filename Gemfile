@@ -8,6 +8,5 @@ gem 'sqlite3'
 gem 'dotenv-rails'
 gem 'minitest-spec-rails'
 gem 'coveralls', require: false
-gem 'rails-controller-testing'
 gem 'redcard'
 gem 'mocha', require: false
