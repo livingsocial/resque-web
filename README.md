@@ -42,6 +42,11 @@ end
 
 If `RAILS_RESQUE_REDIS` is set in `ENV` and is not the empty string, this gem will set `Resque.redis` equal to `ENV['RAILS_RESQUE_REDIS']` in an initializer.
 
+If you need to set a password for your redis server, use this env variable.
+```
+RAILS_RESQUE_REDIS_PASSWORD=secure_pass
+```
+
 For info on configuring Resque itself (and accepted values of `Resque.redis`) see [the Configuration section of the Resque README](https://github.com/resque/resque#configuration).
 
 
