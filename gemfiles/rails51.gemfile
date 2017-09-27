@@ -10,7 +10,7 @@ gem "minitest-spec-rails"
 gem "coveralls", :require => false
 gem "redcard"
 gem "mocha", :require => false
-gem "rails", "~> 5.1.1"
+gem "rails", "~> 5.1.4"
 gem "rails-controller-testing"
 
 gemspec :path => "../"

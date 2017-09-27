@@ -31,4 +31,5 @@ Vagrantfile
 
 # wwtd
 gemfiles/.bundle
+gemfiles/*.gemfile.lock
 vendor/
