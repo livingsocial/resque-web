@@ -1,17 +1,5 @@
-if RUBY_VERSION < "2.4.0"
-  appraise 'rails40' do
-    gem 'rails', '~> 4.0.13'
-    gem 'nokogiri', '~> 1.6.0'
-  end
-
-  appraise 'rails41' do
-    gem 'rails', '~> 4.1.16'
-    gem 'nokogiri', '~> 1.6.0'
-  end
-end
-
 appraise 'rails42' do
-  gem 'rails', '~> 4.2.9'
+  gem 'rails', '~> 4.2.10'
   gem 'nokogiri', '~> 1.6.0'
 end
 
@@ -23,6 +11,11 @@ if RUBY_VERSION >= "2.2.0"
 
   appraise 'rails51' do
     gem 'rails', '~> 5.1.4'
+    gem 'rails-controller-testing'
+  end
+
+  appraise 'rails52' do
+    gem 'rails', '~> 5.2.0.beta2'
     gem 'rails-controller-testing'
   end
 end
